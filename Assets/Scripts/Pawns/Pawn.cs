@@ -5,9 +5,9 @@ using UnityEngine;
 public class Pawn : MonoBehaviour
 {
     [SerializeField]
-    private float speed;
+    protected float speed;
     [SerializeField]
-    private Rigidbody2D rb;
+    protected Rigidbody2D rb;
     // Start is called before the first frame update
     protected virtual void Start()
     {
