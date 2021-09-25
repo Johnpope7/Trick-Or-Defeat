@@ -26,7 +26,7 @@ public class RangerPawn : Pawn
     // Update is called once per frame
     protected override void Update()
     {
-        coolDown = Mathf.Clamp(coolDown - Time.deltaTime, 0f, coolDownTime); //Cooldown for the action
+        base.Update();
     }
     #endregion
 
@@ -34,7 +34,7 @@ public class RangerPawn : Pawn
     public override void Action()
     {
         //create the vector 3 variable that is equal to our firing zones forward vector multiplied by shot force
-        Vector2 shotDir = firingZone.up * shotForce;
+        Vector2 shotDir = firingZone.right * shotForce;
         //spawn the bullet
         GameObject projectileInstance = Instantiate(projectilePrefab, firingZone.position, firingZone.rotation);
         Projectile projectile = projectileInstance.GetComponent<Projectile>();
