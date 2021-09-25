@@ -10,6 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 6141826384808854934}
   - component: {fileID: 6141826384808854933}
+  - component: {fileID: -5950679083467137826}
+  - component: {fileID: 7035469965499518499}
+  - component: {fileID: -2150161464292853212}
   m_Layer: 0
   m_Name: Lifesource
   m_TagString: Untagged
@@ -82,3 +85,50 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!50 &-5950679083467137826
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6141826384808854932}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!114 &7035469965499518499
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6141826384808854932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddac80bb52cbc204fa66ebdaca0d05c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 100
+  rb: {fileID: -5950679083467137826}
+--- !u!114 &-2150161464292853212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6141826384808854932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f23e01502f0c774ea105f9792e2f89f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
