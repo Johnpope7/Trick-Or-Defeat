@@ -21,8 +21,9 @@ public class TestController : Controller
         pawn.Move(movement);
 
         //controller input
-        if (Input.GetKey("Action")) 
+        if (Input.GetKeyDown("mouse 0")) 
         {
+            Debug.Log("Using Action!");
             pawn.OnAction.Invoke();
         }
     }
