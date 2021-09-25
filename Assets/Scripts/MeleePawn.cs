@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class MeleePawn : Pawn
 {
+    [Header("Melee Setting & Attributes")]
+    [SerializeField]
+    protected Transform attackPos;
+    [SerializeField, Range(0,100)]
+    protected float attackRadius;
     // Start is called before the first frame update
     protected override void Start()
     {
@@ -20,6 +25,8 @@ public class MeleePawn : Pawn
     {
         if (coolDown <= 0)
         {
+            Collider2D[] enemeiesToDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRadius, enemyLayer);
+
             coolDown = coolDownTime;
         }
         else 
