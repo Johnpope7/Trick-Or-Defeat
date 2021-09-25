@@ -13,9 +13,14 @@ public class Pawn : MonoBehaviour
     protected Rigidbody2D rb;
 
     [Header("Pawn Attack Settings")]
-    [SerializeField, Range(0, 10)]
+    [SerializeField, Range(0, 1)]
     protected float coolDownTime;
+    [SerializeField]
     protected float coolDown;
+    [SerializeField]
+    protected LayerMask enemyLayer;
+    [SerializeField, Range(0, 100)]
+    protected float damage;
 
     [Header("Pawn Events")]
     public UnityEvent OnAction;
