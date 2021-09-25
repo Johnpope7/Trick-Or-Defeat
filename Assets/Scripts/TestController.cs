@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class TestController : Controller
 {
-    private Pawn pawn;
     private Vector2 movement;
     // Start is called before the first frame update
     protected override void Start()

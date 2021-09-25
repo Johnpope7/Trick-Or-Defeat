@@ -1,13 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Pawn : MonoBehaviour
 {
-    [SerializeField]
+    [Header("General Pawn Attributes")]
+    [SerializeField, Range(0, 1000)]
     private float speed;
     [SerializeField]
     private Rigidbody2D rb;
+
+    [Header("Pawn Attack Settings")]
+    [SerializeField, Range(0, 10)]
+    private float coolDownTime;
+    private float coolDown;
+
+    [Header("Pawn Events")]
+    public UnityEvent Action;
     // Start is called before the first frame update
     protected virtual void Start()
     {
@@ -24,5 +34,11 @@ public class Pawn : MonoBehaviour
     {
         //move the rigidbody by Vector 2 multiplied by speed.
         rb.velocity = new Vector2(movement.x * speed * Time.fixedDeltaTime, movement.y * speed * Time.fixedDeltaTime);
+    }
+
+    public Pawn GetPawn() 
+    {
+        Pawn pawn = this.gameObject.GetComponent<Pawn>();
+        return pawn;
     }
 }
