@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,17 +8,17 @@ public class Pawn : MonoBehaviour
 {
     [Header("General Pawn Attributes")]
     [SerializeField, Range(0, 1000)]
-    private float speed;
+    protected float speed;
     [SerializeField]
-    private Rigidbody2D rb;
+    protected Rigidbody2D rb;
 
     [Header("Pawn Attack Settings")]
     [SerializeField, Range(0, 10)]
-    private float coolDownTime;
-    private float coolDown;
+    protected float coolDownTime;
+    protected float coolDown;
 
     [Header("Pawn Events")]
-    public UnityEvent Action;
+    public UnityEvent OnAction;
     // Start is called before the first frame update
     protected virtual void Start()
     {
@@ -37,5 +38,10 @@ public class Pawn : MonoBehaviour
     {
         //move the rigidbody by Vector 2 multiplied by speed.
         rb.velocity = new Vector2(movement.x * speed * Time.fixedDeltaTime, movement.y * speed * Time.fixedDeltaTime);
+    }
+
+    public virtual void Action() 
+    {
+        //override in children
     }
 }

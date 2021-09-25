@@ -10,10 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1621191432611958644}
   - component: {fileID: 1621191432611958647}
-  - component: {fileID: -8465097832642024602}
   - component: {fileID: 1048460733954429545}
   - component: {fileID: -1353648608461447074}
   - component: {fileID: -2042021169797624837}
+  - component: {fileID: 1245582857}
   m_Layer: 0
   m_Name: Melee
   m_TagString: Untagged
@@ -86,24 +86,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &-8465097832642024602
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1621191432611958646}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ddac80bb52cbc204fa66ebdaca0d05c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 100
-  rb: {fileID: -1353648608461447074}
-  coolDownTime: 0
-  Action:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &1048460733954429545
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -129,8 +111,8 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0
+  m_LinearDrag: 10
+  m_AngularDrag: 10
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
@@ -149,7 +131,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7eb9020091402114ba741534ba6df687, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ragdoll: {fileID: 0}
   MaxHealth: 100
   currentHealth: 100
   onHeal:
@@ -159,5 +140,23 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   onDeath:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &1245582857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1621191432611958646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26d437377aec89b45b10b5ebce204d14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 1000
+  rb: {fileID: -1353648608461447074}
+  coolDownTime: 5
+  Action:
     m_PersistentCalls:
       m_Calls: []

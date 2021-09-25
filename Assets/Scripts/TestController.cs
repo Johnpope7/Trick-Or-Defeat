@@ -14,9 +14,16 @@ public class TestController : Controller
     // Update is called once per frame
     protected override void Update()
     {
+        //movement
         //set movement x and y values to appropriate axis
         movement.x = Input.GetAxis("Horizontal");
         movement.y = Input.GetAxis("Vertical");
         pawn.Move(movement);
+
+        //controller input
+        if (Input.GetKey("Action")) 
+        {
+            pawn.OnAction.Invoke();
+        }
     }
 }
