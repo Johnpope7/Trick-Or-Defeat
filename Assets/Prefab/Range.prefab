@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 567513792655481922}
   - component: {fileID: 7745249173796467477}
   - component: {fileID: 8382165073319017956}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Range
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -135,7 +135,8 @@ MonoBehaviour:
         m_CallState: 2
   projectilePrefab: {fileID: 7605234991400424466, guid: 5a264db1bf4775948bc47d7dd1c9a203, type: 3}
   firingZone: {fileID: 5672442648058184273}
-  projectileLifeSpan: 10
+  projectileLifeSpan: 3
+  shotForce: 1000
 --- !u!50 &8382165073319017956
 Rigidbody2D:
   serializedVersion: 4
@@ -156,7 +157,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!1 &3641789250391905074
 GameObject:
   m_ObjectHideFlags: 0
@@ -166,7 +167,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5672442648058184273}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FiringZone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
