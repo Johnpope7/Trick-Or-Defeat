@@ -1,3 +1,7 @@
+# This .gitignore file should be placed at the root of your Unity project directory
+#
+# Get latest from https://github.com/github/gitignore/blob/master/Unity.gitignore
+#
 /[Ll]ibrary/
 /[Tt]emp/
 /[Oo]bj/
@@ -43,9 +47,6 @@ ExportedObj/
 *.opendb
 *.VC.db
 
-# Log files
-*.log
-
 # Unity3D generated meta files
 *.pidb.meta
 *.pdb.meta
@@ -68,37 +69,3 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
-*.log
-*.log
-*.log
-Logs/AssetImportWorker0.log
-Logs/shadercompiler-AssetImportWorker0.log
-Logs/shadercompiler-UnityShaderCompiler.exe0.log
-Logs/shadercompiler-UnityShaderCompiler.exe1.log
-Logs/shadercompiler-UnityShaderCompiler.exe10.log
-Logs/shadercompiler-UnityShaderCompiler.exe11.log
-Logs/shadercompiler-UnityShaderCompiler.exe2.log
-Logs/shadercompiler-UnityShaderCompiler.exe3.log
-Logs/shadercompiler-UnityShaderCompiler.exe4.log
-Logs/shadercompiler-UnityShaderCompiler.exe5.log
-Logs/shadercompiler-UnityShaderCompiler.exe6.log
-Logs/shadercompiler-UnityShaderCompiler.exe7.log
-Logs/shadercompiler-UnityShaderCompiler.exe8.log
-Logs/shadercompiler-UnityShaderCompiler.exe9.log
-Logs/AssetImportWorker0.log
-Logs/shadercompiler-AssetImportWorker0.log
-Logs/shadercompiler-UnityShaderCompiler.exe0.log
-Logs/shadercompiler-UnityShaderCompiler.exe1.log
-Logs/shadercompiler-UnityShaderCompiler.exe10.log
-Logs/shadercompiler-UnityShaderCompiler.exe11.log
-Logs/shadercompiler-UnityShaderCompiler.exe2.log
-Logs/shadercompiler-UnityShaderCompiler.exe3.log
-Logs/shadercompiler-UnityShaderCompiler.exe4.log
-Logs/shadercompiler-UnityShaderCompiler.exe5.log
-Logs/shadercompiler-UnityShaderCompiler.exe6.log
-Logs/shadercompiler-UnityShaderCompiler.exe7.log
-Logs/shadercompiler-UnityShaderCompiler.exe8.log
-Logs/shadercompiler-UnityShaderCompiler.exe9.log
-*.log
-*.log
-UserSettings/EditorUserSettings.asset
