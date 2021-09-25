@@ -37,7 +37,6 @@ public class MeleePawn : Pawn
             //for every collider in that array
             for (int i = 0; i < enemiesToDamage.Length; i++) 
             {
-                //
                 enemiesToDamage[i].GetComponent<Health>().Damage(damage);
                 Debug.Log("Hit Enemy: " + enemiesToDamage[i].name);
             }

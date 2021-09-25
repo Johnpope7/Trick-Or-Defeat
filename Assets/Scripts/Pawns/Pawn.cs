@@ -39,10 +39,15 @@ public class Pawn : MonoBehaviour
     protected LayerMask enemyLayer; 
     [SerializeField, Range(0, 100), Tooltip("the amount of damage a pawn's attack does")]
     protected float damage;
-
+    
     [Header("Pawn Events")]
     [Tooltip("Calls the class's special action. Usually used on controllers to allow the player to attack.")]
     public UnityEvent OnAction;
+
+    [Header("AI Settings")]
+    [SerializeField, Range(0, 100), Tooltip("the range of an attack")]
+    protected float attackRange;
+    protected string typeId;
     // Start is called before the first frame update
     protected virtual void Start()
     {
@@ -73,5 +78,28 @@ public class Pawn : MonoBehaviour
     public virtual void Action() 
     {
         //override in children
+    }
+
+    /// <summary>
+    /// Returns the movement speed of the pawn
+    /// </summary>
+    /// <returns>float</returns>
+    public float GetSpeed() 
+    {
+        return speed;
+    }
+
+    /// <summary>
+    /// Returns the attack range of the pawn
+    /// </summary>
+    /// <returns>float</returns>
+    public float GetAttackRange() 
+    {
+        return attackRange;
+    }
+
+    public string GetTypeId() 
+    {
+        return typeId;
     }
 }
