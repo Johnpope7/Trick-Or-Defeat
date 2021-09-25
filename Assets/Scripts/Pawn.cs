@@ -14,11 +14,11 @@ public class Pawn : MonoBehaviour
 
     [Header("Pawn Attack Settings")]
     [SerializeField, Range(0, 1)]
-    protected float coolDownTime;
+    protected float coolDownTime; //the amount of time it takes an action to refresh
     [SerializeField]
-    protected float coolDown;
+    protected float coolDown; //holds our cool down countdown, we subtract from this to tell when our action is refreshed
     [SerializeField]
-    protected LayerMask enemyLayer;
+    protected LayerMask enemyLayer; //the Layer Mask taht the enemies reside
     [SerializeField, Range(0, 100)]
     protected float damage;
 
@@ -27,7 +27,7 @@ public class Pawn : MonoBehaviour
     // Start is called before the first frame update
     protected virtual void Start()
     {
-        
+        rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
