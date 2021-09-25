@@ -16,6 +16,10 @@ public class Pawn : MonoBehaviour
     [SerializeField, Range(0, 10)]
     protected float coolDownTime;
     protected float coolDown;
+    [SerializeField]
+    protected LayerMask enemyLayer;
+    [SerializeField, Range(0, 100)]
+    protected float damage;
 
     [Header("Pawn Events")]
     public UnityEvent OnAction;
