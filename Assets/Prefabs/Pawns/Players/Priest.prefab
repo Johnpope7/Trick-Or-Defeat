@@ -105,7 +105,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &7035469965499518499
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -129,6 +129,7 @@ MonoBehaviour:
   OnAction:
     m_PersistentCalls:
       m_Calls: []
+  attackRange: 0
 --- !u!114 &-2150161464292853212
 MonoBehaviour:
   m_ObjectHideFlags: 0
