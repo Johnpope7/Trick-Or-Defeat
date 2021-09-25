@@ -6,6 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/PriestTestScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/Scenes/OpeningScene.unity
+    guid: b690ecf6ae1d04946a9d278d4b08d7ae
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 4081497a2ae238143b96da382025d358
+  - enabled: 1
+    path: Assets/Scenes/Level 1.unity
+    guid: 52084ceae1520ea4098e640703725965
   m_configObjects: {}
