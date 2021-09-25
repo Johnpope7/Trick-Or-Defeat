@@ -22,6 +22,9 @@ public class MeleePawn : Pawn
         coolDown = Mathf.Clamp(coolDown - Time.deltaTime, 0f, coolDownTime);
     }
 
+    /// <summary>
+    /// An action that pawns can perform. This can be anything from a melee attack, to a heal.
+    /// </summary>
     public override void Action() 
     {
         if (coolDown <= 0)
