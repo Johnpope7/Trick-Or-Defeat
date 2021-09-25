@@ -265,5 +265,9 @@ PrefabInstance:
       propertyPath: shotForce
       value: 1000
       objectReference: {fileID: 0}
+    - target: {fileID: 8382165073319017956, guid: 929169a3ccb8e594da1b3a1ae6021a06, type: 3}
+      propertyPath: m_Constraints
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 929169a3ccb8e594da1b3a1ae6021a06, type: 3}
