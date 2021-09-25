@@ -1,3 +1,21 @@
+/*
+ * This is the pawn superclass for all the pawns in the game
+ * aside from the common attributes below these pawns take advantage of the UnityEvents class
+ * 
+ * Just create a class that inherits from this one by replacing "MonoBehaviour" with "Pawn"
+ * CAUTION: Do the above INSIDE your CHILD CLASS the syntax is ChildClass : ParentCLass
+ * just like you see below, Pawn is inheriting from MonoBehavior so it can be attached
+ * to GameObjects within the Unity Engine.
+ * 
+ * The Action() Method below is meant to be overriden within a child class to create effects.
+ * For the Ranger, the Action is shooting arrows. For the Shield, it might be a charge or 
+ * something that can slow enemies around him.
+ * 
+ * Whatever it may be, create an override function within the child class with the name Action()
+ * to take advantage of this functionality. If you ever wish to add an event and call it yourself,
+ * you must first declare it like it is below the header "Pawn Events" in this script. Then,
+ * simply .Invoke() it when you wish for the event to trigger.
+ */
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -7,26 +25,28 @@ using UnityEngine.Events;
 public class Pawn : MonoBehaviour
 {
     [Header("General Pawn Attributes")]
-    [SerializeField, Range(0, 1000)]
+    [SerializeField, Range(0, 1000),Tooltip("the movement speed of the pawn")]
     protected float speed;
-    [SerializeField]
+    [SerializeField, Tooltip("The Rigidbody 2D on this pawn")]
     protected Rigidbody2D rb;
 
     [Header("Pawn Attack Settings")]
-    [SerializeField, Range(0, 1)]
-    protected float coolDownTime; //the amount of time it takes an action to refresh
-    [SerializeField]
-    protected float coolDown; //holds our cool down countdown, we subtract from this to tell when our action is refreshed
-    [SerializeField]
-    protected LayerMask enemyLayer; //the Layer Mask taht the enemies reside
-    [SerializeField, Range(0, 100)]
+    [SerializeField, Range(0, 1), Tooltip("the amount of time it takes an action to refresh")]
+    protected float coolDownTime;
+    [SerializeField, Tooltip("this is the cool down countdown, time is subtract from this to tell when an action can be performed again.")]
+    protected float coolDown;
+    [SerializeField, Tooltip("the Layer Mask that the enemies reside in")]
+    protected LayerMask enemyLayer; 
+    [SerializeField, Range(0, 100), Tooltip("the amount of damage a pawn's attack does")]
     protected float damage;
 
     [Header("Pawn Events")]
+    [Tooltip("Calls the class's special action. Usually used on controllers to allow the player to attack.")]
     public UnityEvent OnAction;
     // Start is called before the first frame update
     protected virtual void Start()
     {
+        //get the rigidbody of this game object
         rb = GetComponent<Rigidbody2D>();
     }
 
@@ -36,7 +56,8 @@ public class Pawn : MonoBehaviour
         
     }
     /// <summary>
-    /// Moves the pawn in the given direction using their rigidbody
+    /// Moves the pawn in the given direction using their rigidbody.
+    /// Takes in a Vector2D.
     /// </summary>
     /// <param name="movement"></param>
     public void Move(Vector2 movement)
@@ -45,6 +66,9 @@ public class Pawn : MonoBehaviour
         rb.velocity = new Vector2(movement.x * speed * Time.fixedDeltaTime, movement.y * speed * Time.fixedDeltaTime);
     }
 
+    /// <summary>
+    /// An action that pawns can perform. This can be anything from a melee attack, to a heal.
+    /// </summary>
     public virtual void Action() 
     {
         //override in children

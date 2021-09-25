@@ -18,11 +18,11 @@ using UnityEngine.Events;
 public class Health : MonoBehaviour
 {
     [Header("Health Values")]
-    [SerializeField]
-    private float MaxHealth = 100f;
-    [SerializeField]
+    [SerializeField, Tooltip("Max health of the player")]
+    private float MaxHealth = 100f; 
+    [SerializeField, Tooltip("Current health of the player")]
     private float currentHealth = 100f;
-    private float percent;
+    private float percent; //percentage of health
 
     [Header("Events")]
     [SerializeField, Tooltip("Called every time the object is healed.")]

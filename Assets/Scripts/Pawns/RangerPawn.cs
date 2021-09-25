@@ -5,14 +5,16 @@ using UnityEngine;
 public class RangerPawn : Pawn
 {
     // Start is called before the first frame update
-    void Start()
+    protected override void Start()
     {
-        
+        //call the parent class's start method
+        base.Start();
     }
 
     // Update is called once per frame
-    void Update()
+    protected override void Update()
     {
-        
+        //call the parent classes update method
+        base.Update();
     }
 }
