@@ -53,7 +53,8 @@ public class Pawn : MonoBehaviour
     // Update is called once per frame
     protected virtual void Update()
     {
-        
+        //lower cooldown as time passes, but not below 0 or above its cooldown time
+        coolDown = Mathf.Clamp(coolDown - Time.deltaTime, 0f, coolDownTime);
     }
     /// <summary>
     /// Moves the pawn in the given direction using their rigidbody.

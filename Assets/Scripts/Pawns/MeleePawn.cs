@@ -20,8 +20,8 @@ public class MeleePawn : Pawn
     // Update is called once per frame
     protected override void Update()
     {
-        //lower cooldown as time passes, but not below 0 or above its cooldown time
-        coolDown = Mathf.Clamp(coolDown - Time.deltaTime, 0f, coolDownTime);
+        //call the parent class's update method
+        base.Update();
     }
 
     /// <summary>

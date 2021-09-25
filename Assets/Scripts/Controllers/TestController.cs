@@ -43,7 +43,7 @@ public class TestController : Controller
         //Action Input
         //we're using mouse 0 for now because the Action input we made in
         //the input manager wasn't recognized by name for whatever reason
-        if (Input.GetKeyDown("mouse 0")) 
+        if (Input.GetKeyDown("Action")) 
         {
             Debug.Log("Using Action!");
             //this is the action event on the pawn component

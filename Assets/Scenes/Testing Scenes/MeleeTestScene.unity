@@ -130,6 +130,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -2042021169797624837, guid: 53b388ad2109c0e4a88e4ea035a86426, type: 3}
+      propertyPath: onDamage.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -2042021169797624837, guid: 53b388ad2109c0e4a88e4ea035a86426, type: 3}
+      propertyPath: onDamage.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -2042021169797624837, guid: 53b388ad2109c0e4a88e4ea035a86426, type: 3}
+      propertyPath: onDamage.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1621191432611958644, guid: 53b388ad2109c0e4a88e4ea035a86426, type: 3}
       propertyPath: m_RootOrder
       value: 1
