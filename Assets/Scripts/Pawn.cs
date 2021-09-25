@@ -29,16 +29,13 @@ public class Pawn : MonoBehaviour
     {
         
     }
-
+    /// <summary>
+    /// Moves the pawn in the given direction using their rigidbody
+    /// </summary>
+    /// <param name="movement"></param>
     public void Move(Vector2 movement)
     {
         //move the rigidbody by Vector 2 multiplied by speed.
         rb.velocity = new Vector2(movement.x * speed * Time.fixedDeltaTime, movement.y * speed * Time.fixedDeltaTime);
-    }
-
-    public Pawn GetPawn() 
-    {
-        Pawn pawn = this.gameObject.GetComponent<Pawn>();
-        return pawn;
     }
 }

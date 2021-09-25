@@ -17,4 +17,23 @@ public class Controller : MonoBehaviour
     {
         
     }
+
+    /// <summary>
+    /// Gets the pawn that this controller is controlling.
+    /// </summary>
+    /// <returns>returns a Pawn component</returns>
+    public Pawn GetPawn()
+    {
+        Pawn pawn = this.gameObject.GetComponent<Pawn>();
+        return pawn;
+    }
+
+    /// <summary>
+    /// Sets the pawn of this controller to the one passed in.
+    /// </summary>
+    /// <param name="newPawn"></param>
+    public void SetPawn(Pawn newPawn) 
+    {
+        pawn = newPawn;
+    }
 }
