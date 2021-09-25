@@ -46,6 +46,9 @@ public class MeleePawn : Pawn
         Debug.Log("Action Complete!");
     }
 
+    /// <summary>
+    /// Gizmo for visually displaying the attack range
+    /// </summary>
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
