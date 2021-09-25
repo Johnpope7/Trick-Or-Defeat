@@ -110,15 +110,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4fd004ea30af29448d9b18deab53008, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
-  rb: {fileID: 0}
+  speed: 1000
+  rb: {fileID: 8382165073319017956}
   coolDownTime: 0
+  coolDown: 2
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  damage: 0
   OnAction:
     m_PersistentCalls:
-      m_Calls: []
-  projectile: {fileID: 2221729412267241214, guid: 5a264db1bf4775948bc47d7dd1c9a203, type: 3}
+      m_Calls:
+      - m_Target: {fileID: 7745249173796467477}
+        m_TargetAssemblyTypeName: RangerPawn, Assembly-CSharp
+        m_MethodName: Action
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  projectilePrefab: {fileID: 7605234991400424466, guid: 5a264db1bf4775948bc47d7dd1c9a203, type: 3}
   firingZone: {fileID: 5672442648058184273}
-  projectileLifeSpan: 0
+  projectileLifeSpan: 10
 --- !u!50 &8382165073319017956
 Rigidbody2D:
   serializedVersion: 4

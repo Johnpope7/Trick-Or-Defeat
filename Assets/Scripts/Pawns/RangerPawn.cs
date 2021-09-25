@@ -6,27 +6,27 @@ public class RangerPawn : Pawn
 {
     #region Variables
     [Header("Action Variables")]
-    public Projectile actionProj;
     public GameObject projectilePrefab; // stores game object for the projectile instantiation
-    private Rigidbody prb; //stores the projectile rigid body
+    private Rigidbody2D prb; //stores the projectile rigid body
     [SerializeField]
     private Transform firingZone; //the spot from which the projectile comes from
     public float projectileLifeSpan;//the lifespan of a projectile, how long itll last on the screen
+    [SerializeField]
     private float shotForce = 20000f; //speed of the projectile shot
 
     #endregion
 
     #region Builtin Methods
     // Start is called before the first frame update
-    void Start()
+    protected override void Start()
     {
-        actionProj = GetComponent<Projectile>();
+        base.Start();
     }
 
     // Update is called once per frame
-    void Update()
+    protected override void Update()
     {
-
+        coolDown = Mathf.Clamp(coolDown - Time.deltaTime, 0f, coolDownTime); //Cooldown for the action
     }
     #endregion
 
@@ -34,7 +34,7 @@ public class RangerPawn : Pawn
     public override void Action()
     {
         //create the vector 3 variable that is equal to our firing zones forward vector multiplied by shot force
-        Vector2 shotDir = firingZone.forward * shotForce;
+        Vector2 shotDir = firingZone.up * shotForce;
         Debug.Log("shotDir is," + shotDir);
         //spawn the bullet
         GameObject projectileInstance = Instantiate(projectilePrefab, firingZone.position, firingZone.rotation);
@@ -47,7 +47,7 @@ public class RangerPawn : Pawn
         projectile.SetProjectileDamage(damage);
         Debug.Log("projectileDamage set," + projectile.GetProjectileDamage());
         //get the shell rigid body to apply force
-        prb = projectileInstance.GetComponent<Rigidbody>();
+        prb = projectile.GetComponent<Rigidbody2D>();
         Debug.Log("Rigidbody set");
         //apply the shotforce variable to the rigid body to make the bullet move
         prb.AddForce(shotDir);
