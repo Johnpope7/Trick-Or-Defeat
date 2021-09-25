@@ -6,7 +6,7 @@ public class Projectile : MonoBehaviour
 {
     #region Variables
     public GameObject instigator; //stores the object that fires this projectile
-    private Rigidbody prb; //stores the projectile rigidbody 
+    private Rigidbody2D prb; //stores the projectile rigidbody 
     private float projectileDamage; //the damage value of the projectile
 
 
@@ -14,7 +14,7 @@ public class Projectile : MonoBehaviour
     #endregion
     private void Awake()
     {
-        prb = GetComponent<Rigidbody>();
+        prb = GetComponent<Rigidbody2D>();
     }
     #region CustomMethods
     private void OnTriggerEnter(Collider _other)
