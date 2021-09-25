@@ -2,6 +2,9 @@
  * Such as, getters and setters for current health, max health, and a percentage value of health
  * It also contains functions for healing, taking damage, and dying
  * 
+ * Just add this component to anything you want to be able to die or take damage.
+ * Adding a correlating display is easy with the getter and setter functions
+ * 
  * It is older than this project would have you believe so I do not remember what the Invoking functions are for
  * this part of the description will remain until I discover it again
  * 
@@ -15,11 +18,11 @@ using UnityEngine.Events;
 public class Health : MonoBehaviour
 {
     [Header("Health Values")]
-    [SerializeField]
-    private float MaxHealth = 100f;
-    [SerializeField]
+    [SerializeField, Tooltip("Max health of the player")]
+    private float MaxHealth = 100f; 
+    [SerializeField, Tooltip("Current health of the player")]
     private float currentHealth = 100f;
-    private float percent;
+    private float percent; //percentage of health
 
     [Header("Events")]
     [SerializeField, Tooltip("Called every time the object is healed.")]
@@ -142,5 +145,6 @@ public class Health : MonoBehaviour
     public void Die() 
     {
         //Object Pull or destroy
+        Destroy(gameObject);
     }
 }
