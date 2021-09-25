@@ -2,6 +2,9 @@
  * Such as, getters and setters for current health, max health, and a percentage value of health
  * It also contains functions for healing, taking damage, and dying
  * 
+ * Just add this component to anything you want to be able to die or take damage.
+ * Adding a correlating display is easy with the getter and setter functions
+ * 
  * It is older than this project would have you believe so I do not remember what the Invoking functions are for
  * this part of the description will remain until I discover it again
  * 
@@ -142,5 +145,6 @@ public class Health : MonoBehaviour
     public void Die() 
     {
         //Object Pull or destroy
+        Destroy(gameObject);
     }
 }
