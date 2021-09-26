@@ -45,4 +45,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pawn: {fileID: 0}
   pawnName: Priest
-  pawnPrefab: {fileID: 819368652020872424, guid: 959ac17e02792e84b8f8623450552162, type: 3}
+  pawnPrefab: {fileID: 6141826384808854932, guid: 959ac17e02792e84b8f8623450552162, type: 3}

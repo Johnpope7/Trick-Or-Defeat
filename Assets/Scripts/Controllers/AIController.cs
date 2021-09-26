@@ -40,6 +40,14 @@ public class AIController : Controller
     // Update is called once per frame
     protected override void Update()
     {
+        if (target == null) 
+        {
+            target = LevelManager.instance.target;
+        }
+        if (targetTf == null) 
+        {
+            targetTf = target.transform;
+        }
         foreach (var enemy in LevelManager.instance.enemies)
         {
            Pawn pawn =  enemy.GetComponent<Pawn>();

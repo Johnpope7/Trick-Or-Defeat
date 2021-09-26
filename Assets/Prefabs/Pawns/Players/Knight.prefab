@@ -292,7 +292,6 @@ GameObject:
   - component: {fileID: 3782536716662230201}
   - component: {fileID: 72773161504519505}
   - component: {fileID: -4145935189275456709}
-  - component: {fileID: 8138504814425049752}
   m_Layer: 0
   m_Name: Knight
   m_TagString: Untagged
@@ -431,6 +430,7 @@ MonoBehaviour:
         m_CallState: 2
   attackRange: 0
   typeId: 
+  colliderTimer: 2
   attackPos: {fileID: 3556487174548323239}
   attackRadius: 0.7
 --- !u!95 &-4145935189275456709
@@ -452,17 +452,3 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &8138504814425049752
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8438483462664946828}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9dcb56d3fc6cf048ada7581a6d79417, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pawnName: Knight
-  pawnPrefab: {fileID: 8438483462664946828}

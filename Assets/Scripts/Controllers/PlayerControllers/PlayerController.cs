@@ -12,7 +12,7 @@ public class PlayerController : Controller
     protected string pawnName;
     //this is the prefab for the pawn the controller is using
     [SerializeField]
-    protected Pawn pawnPrefab;
+    protected GameObject pawnPrefab;
     //the movement direction of the player
     protected Vector2 movement;
     //the animator that is on the controllers pawn
@@ -85,8 +85,9 @@ public class PlayerController : Controller
 
     protected virtual void SpawnPawn() 
     {
-        pawn = Instantiate(pawnPrefab, new Vector3(0, 0, 0), Quaternion.identity) as Pawn;
-        pawn.name = pawnName;
+        GameObject _pawn = Instantiate(pawnPrefab, new Vector3(0, 0, 0), Quaternion.identity);
+        pawn = _pawn.GetComponent<Pawn>();
+        _pawn.name = pawnName;
     }
 }
 

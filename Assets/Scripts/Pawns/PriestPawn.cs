@@ -6,6 +6,10 @@ public class PriestPawn : Pawn
 {
     protected float distance = 10f;
 
+    private void Awake()
+    {
+        LevelManager.instance.target = this.gameObject;
+    }
     // Start is called before the first frame update
     protected override void Start()
     {

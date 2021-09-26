@@ -45,4 +45,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pawn: {fileID: 0}
   pawnName: Knight
-  pawnPrefab: {fileID: 72773161504519505, guid: c81eeed904cab094fad9bc0beff4afae, type: 3}
+  pawnPrefab: {fileID: 8438483462664946828, guid: c81eeed904cab094fad9bc0beff4afae, type: 3}
