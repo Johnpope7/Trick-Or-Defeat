@@ -1,25 +1,19 @@
 fileFormatVersion: 2
-guid: af29e8adf918a544288cbee240348dd5
+guid: 2b7e0003bba55294ea7a565c051d6cd3
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2473236760306093928
-    second: skull_2
+      213: 5353841184698615464
+    second: fireball_0
   - first:
-      213: 9088645747949005959
-    second: skull_0
+      213: 750297706712597742
+    second: fireball_1
   - first:
-      213: 2643512183824930599
-    second: skull_1
+      213: -8127487528002223245
+    second: fireball_2
   - first:
-      213: -69237984613756521
-    second: skull_3
-  - first:
-      213: -8523189754874938962
-    second: skull_4
-  - first:
-      213: 523501383259732580
-    second: skull_2
+      213: -3915765450054648673
+    second: fireball_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -121,28 +115,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: skull_2
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 86f8b7fcab3b25220800000000000000
-      internalID: 2473236760306093928
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: skull_0
+      name: fireball_0
       rect:
         serializedVersion: 2
         x: 0
@@ -156,14 +129,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 78c6ddf672b512e70800000000000000
-      internalID: 9088645747949005959
+      spriteID: 8a641dd013aac4a40800000000000000
+      internalID: 5353841184698615464
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: skull_1
+      name: fireball_1
       rect:
         serializedVersion: 2
         x: 64
@@ -177,14 +150,35 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7275d444354afa420800000000000000
-      internalID: 2643512183824930599
+      spriteID: ee4056cf9c7996a00800000000000000
+      internalID: 750297706712597742
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: skull_3
+      name: fireball_2
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3738201972d553f80800000000000000
+      internalID: -8127487528002223245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fireball_3
       rect:
         serializedVersion: 2
         x: 192
@@ -198,50 +192,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 791122a7b640a0ff0800000000000000
-      internalID: -69237984613756521
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: skull_4
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ea93e63631c87b980800000000000000
-      internalID: -8523189754874938962
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: skull_5
-      rect:
-        serializedVersion: 2
-        x: 320
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 46a3f940cb9d34700800000000000000
-      internalID: 523501383259732580
+      spriteID: f9cbebdd11868a9c0800000000000000
+      internalID: -3915765450054648673
       vertices: []
       indices: 
       edges: []

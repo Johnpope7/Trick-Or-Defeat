@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class ERangedPawn : Pawn
 {
-    
     [Header("Action Variables")]
     [HideInInspector]
     public GameObject target; //the target of the enemy pawn
