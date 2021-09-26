@@ -35,6 +35,7 @@ public class EnemySpawner : Spawner
                 enemy.name = LevelManager.instance.enemyPrefabs[random] + "_" + LevelManager.instance.currentEnemies;
                 //add it to the GameManager's list of enemies
                 LevelManager.instance.enemies.Add(enemy);
+                //
                 //set the next spawn time equal to now plus enemy spawn delay
                 nextSpawnTime = Time.time + LevelManager.instance.enemySpawnDelay;
                 //increment the number of current enemies

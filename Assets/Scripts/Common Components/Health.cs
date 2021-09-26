@@ -117,7 +117,6 @@ public class Health : MonoBehaviour
         {
             onDeath.Invoke();
         }
-        Debug.Log("{0%} took damage!", gameObject);
     }
 
     /// <summary>
