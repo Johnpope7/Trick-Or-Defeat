@@ -5,22 +5,32 @@ using UnityEngine;
 public class PlayerController : Controller
 {
     //the pawn this controller is controlling
+    [SerializeField]
     protected Pawn pawn;
+    //this is the name of the pawn the controller is using
+    [SerializeField]
+    protected string pawnName;
+    //this is the prefab for the pawn the controller is using
+    [SerializeField]
+    protected Pawn pawnPrefab;
     //the movement direction of the player
-    private Vector2 movement;
+    protected Vector2 movement;
     //the animator that is on the controllers pawn
     protected Animator anim;
     //the direction the player is aiming
-    private Vector2 aim;
+    protected Vector2 aim;
 
     // Start is called before the first frame update
-    protected override void Start()
+    new protected virtual void Start()
     {
-        pawn = GetComponent<Pawn>();
+        if (pawn == null)
+        {
+            SpawnPawn();
+        }
     }
 
-    // Update is called once per frame
-    protected override void Update()
+        // Update is called once per frame
+        new protected virtual void Update()
     {
 
         //movement
@@ -72,4 +82,11 @@ public class PlayerController : Controller
     {
         pawn = newPawn;
     }
+
+    protected virtual void SpawnPawn() 
+    {
+        pawn = Instantiate(pawnPrefab, new Vector3(0, 0, 0), Quaternion.identity) as Pawn;
+        pawn.name = pawnName;
+    }
 }
+

@@ -93,11 +93,11 @@ GameObject:
   m_Component:
   - component: {fileID: 3021350043375090882}
   - component: {fileID: 3021350043375090883}
-  - component: {fileID: 567513792655481922}
   - component: {fileID: 7745249173796467477}
   - component: {fileID: 8382165073319017956}
   - component: {fileID: 128864637818721817}
   - component: {fileID: 1802713390}
+  - component: {fileID: 7042435324733904070}
   m_Layer: 6
   m_Name: Ranger
   m_TagString: Untagged
@@ -171,18 +171,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &567513792655481922
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3021350043375090880}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f23e01502f0c774ea105f9792e2f89f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &7745249173796467477
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -204,7 +192,7 @@ MonoBehaviour:
   enemyLayer:
     serializedVersion: 2
     m_Bits: 128
-  damage: 0
+  damage: 10
   anim: {fileID: 128864637818721817}
   sr: {fileID: 3021350043375090883}
   animXDeadZone: 0
@@ -297,6 +285,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &7042435324733904070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3021350043375090880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ee19e40376714a4ea630e96970a585e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pawnName: Ranger
+  pawnPrefab: {fileID: 3021350043375090880}
 --- !u!1 &3641789250391905074
 GameObject:
   m_ObjectHideFlags: 0
