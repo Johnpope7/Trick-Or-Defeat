@@ -225,6 +225,10 @@ MonoBehaviour:
     m_Bits: 0
   damage: 15
   anim: {fileID: 4201242376540316882}
+  sr: {fileID: 6892853012905731413}
+  animXDeadZone: 0
+  walkAnim: float_skull
+  idleAnim: float_skull
   OnAction:
     m_PersistentCalls:
       m_Calls:
