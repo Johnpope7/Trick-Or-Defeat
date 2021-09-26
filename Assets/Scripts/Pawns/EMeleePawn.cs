@@ -24,7 +24,7 @@ public class EMeleePawn : Pawn
         {
             //play attack animation
             //wait until it is finished and deal damage
-           Health tHealth = target.GetComponent<Health>();
+           Health tHealth = LevelManager.instance.target.GetComponent<Health>();
             if (tHealth != null) 
             {
                 tHealth.Damage(damage);

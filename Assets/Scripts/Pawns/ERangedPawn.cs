@@ -5,8 +5,6 @@ using UnityEngine;
 public class ERangedPawn : Pawn
 {
     [Header("Action Variables")]
-    [HideInInspector]
-    public GameObject target; //the target of the enemy pawn
     [SerializeField]
     protected GameObject projectilePrefab; // stores game object for the projectile instantiation
     protected Rigidbody2D prb; //stores the projectile rigid body
@@ -33,7 +31,7 @@ public class ERangedPawn : Pawn
         if (coolDown <= 0)
         {
             //get the direction the target is in and multiply it by shotForce
-            Vector2 shotDir = (transform.position - target.transform.position) * shotForce;
+            Vector2 shotDir = (transform.position - LevelManager.instance.target.transform.position) * shotForce;
             //spawn an instance of the projectile at the firing zone
             GameObject projectileInstance = Instantiate(projectilePrefab, firingZone.position, firingZone.rotation);
             Projectile projectile = projectileInstance.GetComponent<Projectile>();

@@ -9,7 +9,7 @@ public class AIController : Controller
 
     [Header("Target Settings")]
     [SerializeField]
-    protected GameObject target; //the player the AI is targeting
+    protected GameObject target;
     [SerializeField]
     protected Transform targetTf; //the transform of the target player
     protected float distanceToTarget; //distance from a specific pawn to a target player
@@ -31,15 +31,13 @@ public class AIController : Controller
     // Start is called before the first frame update
     protected override void Start()
     {
-        //DO NOT call base, we dont want a single pawn on this we need an array of them
-        target = GameObject.FindGameObjectWithTag("Priest");
+        target = LevelManager.instance.target;
+        targetTf = target.transform;
         foreach (var enemy in enemies) 
         {
             string type = enemy.GetComponent<Pawn>().GetTypeId();
             SetEnemyType(type);
-            enemy.GetComponent<ERangedPawn>().target = target;
         }
-        targetTf = target.transform;
     }
 
     // Update is called once per frame

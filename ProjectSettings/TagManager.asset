@@ -14,8 +14,8 @@ TagManager:
   - UI
   - Player
   - Enemy
-  - 
-  - 
+  - Walls
+  - Floor
   - 
   - 
   - 
@@ -41,4 +41,16 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Floor
+    uniqueID: 3705155367
+    locked: 0
+  - name: Wall
+    uniqueID: 3242402265
+    locked: 0
+  - name: Enemies
+    uniqueID: 3935880133
+    locked: 0
+  - name: Players
+    uniqueID: 1363964107
     locked: 0
