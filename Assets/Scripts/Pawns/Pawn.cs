@@ -29,6 +29,7 @@ public class Pawn : MonoBehaviour
     protected float speed;
     [SerializeField, Tooltip("The Rigidbody 2D on this pawn")]
     protected Rigidbody2D rb;
+    
 
     [Header("Pawn Attack Settings")]
     [SerializeField, Range(0, 1), Tooltip("the amount of time it takes an action to refresh")]
@@ -42,6 +43,14 @@ public class Pawn : MonoBehaviour
 
     [Header("Aniamtion Settings"), SerializeField]
     protected Animator anim;
+    [SerializeField, Tooltip("The Sprite Renderer attached to this game object")]
+    protected SpriteRenderer sr;
+    [SerializeField, Tooltip("Variance on the x-axis required before animation change")]
+    protected float animXDeadZone;
+    [SerializeField, Tooltip("The walk animation that for this pawn")]
+    protected string walkAnim;
+    [SerializeField, Tooltip("The idle animation for this pawn")]
+    protected string idleAnim;
 
     [Header("Pawn Events")]
     [Tooltip("Calls the class's special action. Usually used on controllers to allow the player to attack.")]
@@ -52,6 +61,8 @@ public class Pawn : MonoBehaviour
     protected float attackRange;
     [SerializeField]
     protected string typeId;
+    
+
     // Start is called before the first frame update
     protected virtual void Start()
     {
@@ -105,5 +116,29 @@ public class Pawn : MonoBehaviour
     public string GetTypeId() 
     {
         return typeId;
+    }
+
+    protected void FixedUpdate()
+    {
+        UpdateAnimations();
+    }
+
+    //method for animations
+    public void UpdateAnimations()
+    {
+        if (rb.velocity.x < animXDeadZone)
+        {
+            sr.flipX = true;
+            anim.Play(walkAnim);
+        }
+        else if (rb.velocity.x > animXDeadZone)
+        {
+            sr.flipX = false;
+            anim.Play(walkAnim);
+        }
+        else
+        {
+            anim.Play(idleAnim);
+        }
     }
 }
