@@ -173,7 +173,7 @@ Animator:
   m_GameObject: {fileID: 1555405673872753036}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 976f02ba3dad3ba4090689a47b2e82de, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -223,6 +223,11 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   damage: 10
+  anim: {fileID: -3473748009848592242}
+  sr: {fileID: 1555405673872753039}
+  animXDeadZone: 0
+  walkAnim: walk_blackcat
+  idleAnim: walk_blackcat
   OnAction:
     m_PersistentCalls:
       m_Calls:

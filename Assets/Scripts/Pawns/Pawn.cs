@@ -41,7 +41,7 @@ public class Pawn : MonoBehaviour
     [SerializeField, Range(0, 100), Tooltip("the amount of damage a pawn's attack does")]
     protected float damage;
 
-    [Header("Aniamtion Settings"), SerializeField]
+    [Header("Animation Settings"), SerializeField]
     protected Animator anim;
     [SerializeField, Tooltip("The Sprite Renderer attached to this game object")]
     protected SpriteRenderer sr;
