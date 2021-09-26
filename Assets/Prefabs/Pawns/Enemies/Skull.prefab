@@ -220,7 +220,7 @@ MonoBehaviour:
   rb: {fileID: 1619883606918986205}
   wr: {fileID: 0}
   wrSpeed: 0
-  coolDownTime: 0.3
+  coolDownTime: 1
   coolDown: 0
   enemyLayer:
     serializedVersion: 2
