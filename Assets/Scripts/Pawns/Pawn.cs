@@ -47,6 +47,7 @@ public class Pawn : MonoBehaviour
     [Header("AI Settings")]
     [SerializeField, Range(0, 100), Tooltip("the range of an attack")]
     protected float attackRange;
+    [SerializeField]
     protected string typeId;
     // Start is called before the first frame update
     protected virtual void Start()

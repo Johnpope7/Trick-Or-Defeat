@@ -5,14 +5,13 @@ using UnityEngine;
 public class AIController : Controller
 {
     [Header("Controlled Enemies Array")]
-    public static GameObject[] enemies;
+    public GameObject[] enemies;
 
     [Header("Target Settings")]
     [SerializeField]
     protected GameObject target; //the player the AI is targeting
     [SerializeField]
     protected Transform targetTf; //the transform of the target player
-    [SerializeField]
     protected float distanceToTarget; //distance from a specific pawn to a target player
     protected Vector2 movement; //the movement direction of the pawn
     [SerializeField]
@@ -33,13 +32,14 @@ public class AIController : Controller
     protected override void Start()
     {
         //DO NOT call base, we dont want a single pawn on this we need an array of them
-
+        target = GameObject.FindGameObjectWithTag("Priest");
         foreach (var enemy in enemies) 
         {
-            string type = pawn.GetTypeId();
+            string type = enemy.GetComponent<Pawn>().GetTypeId();
             SetEnemyType(type);
             enemy.GetComponent<ERangedPawn>().target = target;
         }
+        targetTf = target.transform;
     }
 
     // Update is called once per frame
@@ -47,12 +47,15 @@ public class AIController : Controller
     {
         foreach (var enemy in enemies)
         {
+           Pawn pawn =  enemy.GetComponent<Pawn>();
+
             if (enemyType == EnemyType.Melee)
             {
                 switch (aiState)
                 {
                     case AIState.Chase:
-                        Chase(target, targetTf);
+                        movement = (targetTf.position - pawn.transform.position) * pawn.GetSpeed() * Time.deltaTime;
+                        pawn.Move(movement);
                         if (distanceToTarget <= pawn.GetAttackRange())
                         {
                             ChangeState(AIState.Attack);
@@ -75,7 +78,8 @@ public class AIController : Controller
                 switch (aiState)
                 {
                     case AIState.Chase:
-                        Chase(target, targetTf);
+                        movement = (targetTf.position - pawn.transform.position) * pawn.GetSpeed() * Time.deltaTime;
+                        pawn.Move(movement);
                         StartCoroutine(StateChangeTimer());
                         break;
                     case AIState.Attack:
@@ -105,11 +109,6 @@ public class AIController : Controller
     {
         //change state
         aiState = newState;
-    }
-    protected void Chase(GameObject target, Transform targetTf)
-    {
-        movement = (targetTf.position - pawn.transform.position) * pawn.GetSpeed() * Time.deltaTime;
-        pawn.Move(movement);
     }
 
     public void SetTarget(GameObject newTarget, Transform newTargetTf)

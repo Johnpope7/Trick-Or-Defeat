@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 855642933639071582}
   - component: {fileID: 8037639872107593510}
   - component: {fileID: 5200721786559280251}
+  - component: {fileID: -1488380851717622204}
   m_Layer: 7
   m_Name: Pumpkin
   m_TagString: Enemy
@@ -76,7 +77,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 9085850837810236297, guid: 8ab312ebe7abaf04f8acba905f03d343, type: 3}
+  m_Sprite: {fileID: -5313682097738838778, guid: f94a67b8108cd82469dd7abe9fa189ab, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -127,7 +128,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.5, y: 0.5625}
+    oldSize: {x: 1, y: 1}
     newSize: {x: 2, y: 2.25}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -153,7 +154,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.5, y: 0.5625}
+    oldSize: {x: 1, y: 1}
     newSize: {x: 2, y: 2.25}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -193,7 +194,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 10
   m_LinearDrag: 1
   m_AngularDrag: 1
   m_GravityScale: 0
@@ -202,3 +203,41 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &-1488380851717622204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 855642933639071578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c126f233d77a9c4fbdb2cc87fdc7723, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 500
+  rb: {fileID: 5200721786559280251}
+  coolDownTime: 0.3
+  coolDown: 0
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  damage: 15
+  OnAction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: -1488380851717622204}
+        m_TargetAssemblyTypeName: EMeleePawn, Assembly-CSharp
+        m_MethodName: Action
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  attackRange: 0.4
+  typeId: Melee
+  target: {fileID: 0}

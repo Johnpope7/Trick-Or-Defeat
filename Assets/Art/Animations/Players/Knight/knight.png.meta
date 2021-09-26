@@ -121,10 +121,10 @@ TextureImporter:
       name: idle_0_knight
       rect:
         serializedVersion: 2
-        x: 16
-        y: 144
-        width: 32
-        height: 36
+        x: 0
+        y: 128
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -142,10 +142,10 @@ TextureImporter:
       name: idle_1_knight
       rect:
         serializedVersion: 2
-        x: 80
-        y: 144
-        width: 32
-        height: 32
+        x: 64
+        y: 128
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -163,10 +163,10 @@ TextureImporter:
       name: walk_0_knight
       rect:
         serializedVersion: 2
-        x: 16
-        y: 80
-        width: 32
-        height: 36
+        x: 0
+        y: 64
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -184,10 +184,10 @@ TextureImporter:
       name: walk_1_knight
       rect:
         serializedVersion: 2
-        x: 80
-        y: 80
-        width: 32
-        height: 36
+        x: 64
+        y: 64
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -205,10 +205,10 @@ TextureImporter:
       name: flash_knight
       rect:
         serializedVersion: 2
-        x: 16
-        y: 16
-        width: 32
-        height: 36
+        x: 0
+        y: 0
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

@@ -1,22 +1,16 @@
 fileFormatVersion: 2
-guid: a07afcdafff43004cbb38988d7c03fa1
+guid: f94a67b8108cd82469dd7abe9fa189ab
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6071807438270461448
-    second: idle_0_barbarian
+      213: -5313682097738838778
+    second: walk_0_pumpkin
   - first:
-      213: -846703285628812456
-    second: idle_1_barbarian
+      213: 6106630176243734921
+    second: walk_1_pumpkin
   - first:
-      213: 4401897034859357095
-    second: walk_0_barbarian
-  - first:
-      213: 8390841715585807046
-    second: walk_1_barbarian
-  - first:
-      213: 7890087175926408571
-    second: flash_barbarian
+      213: -1981255559765664054
+    second: flash_pumpkin
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -118,49 +112,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: idle_0_barbarian
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 128
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8067faef1b4634450800000000000000
-      internalID: 6071807438270461448
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: idle_1_barbarian
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 128
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 85340f509d7ef34f0800000000000000
-      internalID: -846703285628812456
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: walk_0_barbarian
+      name: walk_0_pumpkin
       rect:
         serializedVersion: 2
         x: 0
@@ -174,14 +126,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7a323ace70ea61d30800000000000000
-      internalID: 4401897034859357095
+      spriteID: 60d8ce209420246b0800000000000000
+      internalID: -5313682097738838778
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: walk_1_barbarian
+      name: walk_1_pumpkin
       rect:
         serializedVersion: 2
         x: 64
@@ -195,14 +147,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6c275007512427470800000000000000
-      internalID: 8390841715585807046
+      spriteID: 98950bd7acb1fb450800000000000000
+      internalID: 6106630176243734921
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: flash_barbarian
+      name: flash_pumpkin
       rect:
         serializedVersion: 2
         x: 0
@@ -216,8 +168,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b7565f7ab783f7d60800000000000000
-      internalID: 7890087175926408571
+      spriteID: ace56e6c09a2184e0800000000000000
+      internalID: -1981255559765664054
       vertices: []
       indices: 
       edges: []

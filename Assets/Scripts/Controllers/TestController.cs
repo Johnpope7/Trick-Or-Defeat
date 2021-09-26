@@ -16,14 +16,15 @@ using UnityEngine;
 
 public class TestController : Controller
 {
+    //the pawn this controller is controlling
+    protected Pawn pawn;
     //the movement direction of the player
     private Vector2 movement;
 
     // Start is called before the first frame update
     protected override void Start()
     {
-        //call the parent class's Start method
-        base.Start();
+        pawn = GetComponent<Pawn>();
     }
 
     // Update is called once per frame
@@ -43,7 +44,7 @@ public class TestController : Controller
         //Action Input
         //we're using mouse 0 for now because the Action input we made in
         //the input manager wasn't recognized by name for whatever reason
-        if (Input.GetKeyDown("Action")) 
+        if (Input.GetKeyDown("mouse 0")) 
         {
             Debug.Log("Using Action!");
             //this is the action event on the pawn component
@@ -51,5 +52,24 @@ public class TestController : Controller
             //and this will just do it!
             pawn.OnAction.Invoke();
         }
+    }
+
+    /// <summary>
+    /// Gets the pawn that this controller is controlling.
+    /// </summary>
+    /// <returns>returns a Pawn component</returns>
+    public Pawn GetPawn()
+    {
+        Pawn pawn = this.gameObject.GetComponent<Pawn>();
+        return pawn;
+    }
+
+    /// <summary>
+    /// Sets the pawn of this controller to the one passed in.
+    /// </summary>
+    /// <param name="newPawn"></param>
+    public void SetPawn(Pawn newPawn)
+    {
+        pawn = newPawn;
     }
 }

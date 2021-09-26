@@ -35,6 +35,7 @@ public class ERangedPawn : Pawn
         {
             //get the direction the target is in and multiply it by shotForce
             Vector2 shotDir = (transform.position - target.transform.position) * shotForce;
+            //spawn an instance of the projectile at the firing zone
             GameObject projectileInstance = Instantiate(projectilePrefab, firingZone.position, firingZone.rotation);
             Projectile projectile = projectileInstance.GetComponent<Projectile>();
             //get the instigator
