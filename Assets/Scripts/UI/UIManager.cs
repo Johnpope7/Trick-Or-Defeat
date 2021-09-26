@@ -81,17 +81,12 @@ public class UIManager : MonoBehaviour
         //if we are at the main menu scene
         if (SceneManager.GetActiveScene().buildIndex == mainMenuIndex)
         {
-            //for each item in the main menu contents
-            foreach (GameObject item in mainMenuContents)
-            {
-                //deactivate them
-                item.SetActive(false);
-            } 
+            mainMenu.SetActive(false);
         }
-        //if the pause menu is active
-        if (pauseMenu.activeSelf == true) 
+        //if we are in our level scene
+        if (SceneManager.GetActiveScene().buildIndex == levelIndex)
         {
-            //deactivate it
+            //set the pause menu active again
             pauseMenu.SetActive(false);
         }
         //set the options menu to active
@@ -102,15 +97,11 @@ public class UIManager : MonoBehaviour
     {
         //set the options menu to inactive
         optionsMenu.SetActive(false);
+
         //if we are at the main menu scene
         if (SceneManager.GetActiveScene().buildIndex == mainMenuIndex)
         {
-            //for each item in the main menu contents
-            foreach (GameObject item in mainMenuContents)
-            {
-                //set them active
-                item.SetActive(true);
-            } 
+            mainMenu.SetActive(true);
         }
         //if we are in our level scene
         if (SceneManager.GetActiveScene().buildIndex == levelIndex) 
@@ -121,15 +112,11 @@ public class UIManager : MonoBehaviour
     }
     public void OpenCreditsMenu()
     {
-        //if we are at the main menu scene
-        if (SceneManager.GetActiveScene().buildIndex == mainMenuIndex)
+        //if the main menu is active
+        if (mainMenu.activeSelf == true)
         {
-            //for each item in the main menu contents
-            foreach (GameObject item in mainMenuContents)
-            {
-                //deactivate them
-                item.SetActive(false);
-            } 
+            //set main menu to inactive
+            mainMenu.SetActive(false);
         }
         //set the credits menu to active
         creditsMenu.SetActive(true);
@@ -139,16 +126,8 @@ public class UIManager : MonoBehaviour
     {
         //set the credits menu to inactive
         creditsMenu.SetActive(false);
-        //if we are at the main menu scene
-        if (SceneManager.GetActiveScene().buildIndex == mainMenuIndex)
-        {
-            //for each item in the main menu contents
-            foreach (GameObject item in mainMenuContents)
-            {
-                //set them to active
-                item.SetActive(true);
-            } 
-        }
+        //set main menu to active
+        mainMenu.SetActive(true);
     }
 
     private void CheckMenuObjects() 
