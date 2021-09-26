@@ -9,24 +9,24 @@ public class AIController : Controller
 
     [Header("Target Settings")]
     [SerializeField]
-    protected GameObject target;
+    protected GameObject target; //the player the AI is targeting
     [SerializeField]
-    protected Transform targetTf;
+    protected Transform targetTf; //the transform of the target player
     [SerializeField]
-    protected float distanceToTarget;
-    protected Vector2 movement;
+    protected float distanceToTarget; //distance from a specific pawn to a target player
+    protected Vector2 movement; //the movement direction of the pawn
     [SerializeField]
-    protected LayerMask playerLayer;
+    protected LayerMask playerLayer; //the layer mask the players are on
 
     [Header("AI State")]
     [SerializeField]
-    protected AIState aiState = AIState.Chase;
+    protected AIState aiState = AIState.Chase; //states for the AI, initial state is chase
     [SerializeField]
-    protected EnemyType enemyType;
+    protected EnemyType enemyType; //the type of enemy the AI controller is interfacing with (Melee or Ranged)
     [SerializeField, Range(0, 10)]
-    protected float timer = 3f;
-    protected enum AIState { Chase, Attack, Idle }
-    protected enum EnemyType { Melee, Ranged }
+    protected float timer = 3f; //timer for the melee state change coroutine
+    protected enum AIState { Chase, Attack, Idle } //an enumeration of AI States
+    protected enum EnemyType { Melee, Ranged } //an enumeration of enemy types
 
 
     // Start is called before the first frame update
@@ -38,10 +38,7 @@ public class AIController : Controller
         {
             string type = pawn.GetTypeId();
             SetEnemyType(type);
-            if (enemyType == EnemyType.Ranged) 
-            {
-                enemy.GetComponent<ERangedPawn>().target = target;
-            }
+            enemy.GetComponent<ERangedPawn>().target = target;
         }
     }
 
@@ -50,7 +47,6 @@ public class AIController : Controller
     {
         foreach (var enemy in enemies)
         {
-
             if (enemyType == EnemyType.Melee)
             {
                 switch (aiState)
@@ -112,7 +108,7 @@ public class AIController : Controller
     }
     protected void Chase(GameObject target, Transform targetTf)
     {
-        movement = (targetTf.position - transform.position) * pawn.GetSpeed() * Time.deltaTime;
+        movement = (targetTf.position - pawn.transform.position) * pawn.GetSpeed() * Time.deltaTime;
         pawn.Move(movement);
     }
 

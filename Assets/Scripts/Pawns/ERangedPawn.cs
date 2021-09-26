@@ -6,9 +6,11 @@ public class ERangedPawn : Pawn
 {
     
     [Header("Action Variables")]
+    [HideInInspector]
     public GameObject target; //the target of the enemy pawn
-    public GameObject projectilePrefab; // stores game object for the projectile instantiation
-    private Rigidbody2D prb; //stores the projectile rigid body
+    [SerializeField]
+    protected GameObject projectilePrefab; // stores game object for the projectile instantiation
+    protected Rigidbody2D prb; //stores the projectile rigid body
     [SerializeField]
     private Transform firingZone; //the spot from which the projectile comes from
     public float projectileLifeSpan;//the lifespan of a projectile, how long itll last on the screen
@@ -29,18 +31,22 @@ public class ERangedPawn : Pawn
 
     public override void Action()
     {
-        Vector2 shotDir = transform.position - target.transform.position;
-        GameObject projectileInstance = Instantiate(projectilePrefab, firingZone.position, firingZone.rotation);
-        Projectile projectile = projectileInstance.GetComponent<Projectile>();
-        //get the instigator
-        projectile.instigator = this.gameObject;
-        //get the bulletDamage variable
-        projectile.SetProjectileDamage(damage);
-        //get the shell rigid body to apply force
-        prb = projectile.GetComponent<Rigidbody2D>();
-        //apply the shotforce variable to the rigid body to make the bullet move
-        prb.AddForce(shotDir * shotForce);
-        //destroy the bullet after a desired time
-        Destroy(projectileInstance, projectileLifeSpan);
+        if (coolDown <= 0)
+        {
+            //get the direction the target is in and multiply it by shotForce
+            Vector2 shotDir = (transform.position - target.transform.position) * shotForce;
+            GameObject projectileInstance = Instantiate(projectilePrefab, firingZone.position, firingZone.rotation);
+            Projectile projectile = projectileInstance.GetComponent<Projectile>();
+            //get the instigator
+            projectile.instigator = this.gameObject;
+            //get the bulletDamage variable
+            projectile.SetProjectileDamage(damage);
+            //get the shell rigid body to apply force
+            prb = projectile.GetComponent<Rigidbody2D>();
+            //apply the shotforce variable to the rigid body to make the bullet move
+            prb.AddForce(shotDir);
+            //destroy the bullet after a desired time
+            Destroy(projectileInstance, projectileLifeSpan); 
+        }
     }
 }

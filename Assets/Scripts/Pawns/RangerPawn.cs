@@ -33,21 +33,24 @@ public class RangerPawn : Pawn
     #region Custom Methods
     public override void Action()
     {
-        //create the vector 3 variable that is equal to our firing zones forward vector multiplied by shot force
-        Vector2 shotDir = firingZone.right * shotForce;
-        //spawn the bullet
-        GameObject projectileInstance = Instantiate(projectilePrefab, firingZone.position, firingZone.rotation);
-        Projectile projectile = projectileInstance.GetComponent<Projectile>();
-        //get the instigator
-        projectile.instigator = this.gameObject;
-        //get the bulletDamage variable
-        projectile.SetProjectileDamage(damage);
-        //get the shell rigid body to apply force
-        prb = projectile.GetComponent<Rigidbody2D>();
-        //apply the shotforce variable to the rigid body to make the bullet move
-        prb.AddForce(shotDir);
-        //destroy the bullet after a desired time
-        Destroy(projectileInstance, projectileLifeSpan);
+        if (coolDown <= 0)
+        {
+            //create the vector 3 variable that is equal to our firing zones forward vector multiplied by shot force
+            Vector2 shotDir = firingZone.right * shotForce;
+            //spawn the bullet
+            GameObject projectileInstance = Instantiate(projectilePrefab, firingZone.position, firingZone.rotation);
+            Projectile projectile = projectileInstance.GetComponent<Projectile>();
+            //get the instigator
+            projectile.instigator = this.gameObject;
+            //get the bulletDamage variable
+            projectile.SetProjectileDamage(damage);
+            //get the shell rigid body to apply force
+            prb = projectile.GetComponent<Rigidbody2D>();
+            //apply the shotforce variable to the rigid body to make the bullet move
+            prb.AddForce(shotDir);
+            //destroy the bullet after a desired time
+            Destroy(projectileInstance, projectileLifeSpan); 
+        }
        
     }
     #endregion
