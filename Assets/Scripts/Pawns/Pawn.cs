@@ -92,8 +92,9 @@ public class Pawn : MonoBehaviour
 
     public void Aim(Vector2 aim) 
     {
-        float aimDirection = Mathf.Atan2(aim.x, aim.y);
-        wr.transform.rotation = Quaternion.Euler(0f, 0f, aimDirection * Mathf.Rad2Deg -90);
+
+        Vector3 newAim = new Vector3(aim.x, -aim.y, 0); //creates a new vector out of the right stick inputs
+        wr.transform.right = newAim; //sets the right transform of the weapon rotator equal to newAim
     }
 
     /// <summary>
