@@ -255,7 +255,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1895996916, guid: 8ecbff7c151854d4c87bb1405e4d30a1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: LoadLevel
+      value: LoadNextScene
       objectReference: {fileID: 0}
     - target: {fileID: 2791598569494224379, guid: 8ecbff7c151854d4c87bb1405e4d30a1, type: 3}
       propertyPath: applyButton

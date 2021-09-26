@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class SceneMover : MonoBehaviour
 {
-    [SerializeField, Range(0, 10)]
+    [SerializeField, Range(0, 20)]
     private float timer = 3f;
 
     // Start is called before the first frame update

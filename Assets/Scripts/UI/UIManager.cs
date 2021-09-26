@@ -39,7 +39,7 @@ public class UIManager : MonoBehaviour
     [Header("Scene Attributes"), SerializeField]
     private int mainMenuIndex = 1;
     [SerializeField]
-    private int levelIndex = 2;
+    private int levelIndex = 3;
     [Header("Level Attributes")]
     [SerializeField]
     private Image playerHealthBar;
