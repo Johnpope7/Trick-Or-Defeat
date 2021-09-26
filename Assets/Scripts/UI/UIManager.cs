@@ -239,4 +239,9 @@ public class UIManager : MonoBehaviour
             creditsMenu.SetActive(false); 
         }
     }
+
+    public GameObject GetLevelUi() 
+    {
+        return levelUI;
+    }
 }
