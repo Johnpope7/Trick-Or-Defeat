@@ -1,19 +1,22 @@
 fileFormatVersion: 2
-guid: c46c2465ba792cc44ac7a50f3baaa6da
+guid: 0d380dc62e0d1cd489d77726d01bd84e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4137628309748952677
-    second: test_barbarian
+      213: -2850707533075056667
+    second: idle_0_ranger
   - first:
-      213: -6673210395043075583
-    second: test_knight
+      213: 2747413984754389643
+    second: idle_1_ranger
   - first:
-      213: -6662893373299110272
-    second: test_priest
+      213: 1004050130200608572
+    second: walk_0_ranger
   - first:
-      213: 5562746721036612434
-    second: test_ranger
+      213: -222546025886523532
+    second: walk_1_ranger
+  - first:
+      213: 2340934481643061458
+    second: flash_ranger
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -115,85 +118,106 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: test_barbarian
+      name: idle_0_ranger
       rect:
         serializedVersion: 2
-        x: 4
-        y: 0
-        width: 44
-        height: 36
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b9150d079f03496c0800000000000000
-      internalID: -4137628309748952677
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: test_knight
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 0
-        width: 36
-        height: 36
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 10a630c708ef363a0800000000000000
-      internalID: -6673210395043075583
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: test_priest
-      rect:
-        serializedVersion: 2
-        x: 120
-        y: 0
+        x: 16
+        y: 144
         width: 32
-        height: 44
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 08ec33c47c5a883a0800000000000000
-      internalID: -6662893373299110272
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: test_ranger
-      rect:
-        serializedVersion: 2
-        x: 180
-        y: 0
-        width: 36
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2533bda8ba8d23d40800000000000000
-      internalID: 5562746721036612434
+      spriteID: 5e7f7843a904078d0800000000000000
+      internalID: -2850707533075056667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle_1_ranger
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 144
+        width: 32
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b82d9347676c02620800000000000000
+      internalID: 2747413984754389643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walk_0_ranger
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 80
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3fba43164a1fed00800000000000000
+      internalID: 1004050130200608572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walk_1_ranger
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 80
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47fdbdc819b59ecf0800000000000000
+      internalID: -222546025886523532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flash_ranger
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 16
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d04ccc128bac7020800000000000000
+      internalID: 2340934481643061458
       vertices: []
       indices: 
       edges: []

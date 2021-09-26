@@ -46,7 +46,7 @@ GameObject:
   - component: {fileID: 1245582857}
   - component: {fileID: 26567227}
   m_Layer: 6
-  m_Name: Melee
+  m_Name: Barbarian
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -107,7 +107,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -4137628309748952677, guid: c46c2465ba792cc44ac7a50f3baaa6da, type: 3}
+  m_Sprite: {fileID: -7208666623593418125, guid: d714acf63a9607c4f84324ee067b512e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -209,6 +209,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  attackRange: 0
   attackPos: {fileID: 1458619656}
   attackRadius: 0.7
 --- !u!61 &26567227
@@ -228,7 +229,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.6875, y: 0.5625}
+    oldSize: {x: 0.5, y: 0.5625}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

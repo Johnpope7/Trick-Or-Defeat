@@ -38,6 +38,10 @@ public class AIController : Controller
         {
             string type = pawn.GetTypeId();
             SetEnemyType(type);
+            if (enemyType == EnemyType.Ranged) 
+            {
+                enemy.GetComponent<ERangedPawn>().target = target;
+            }
         }
     }
 
