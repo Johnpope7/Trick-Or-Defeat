@@ -17,19 +17,16 @@ public class Projectile : MonoBehaviour
         prb = GetComponent<Rigidbody2D>();
     }
     #region CustomMethods
-    private void OnTriggerEnter(Collider _other)
+    private void OnTriggerEnter2D(Collider2D _other)
     {
-        Debug.Log("Collision Detected");
         GameObject enemyObject = _other.gameObject;
         Health enemyHealth = enemyObject.GetComponent<Health>();
         if (enemyHealth != null) //if the enemy has health, make it take damage
         {
             enemyHealth.Damage(projectileDamage);
-            Debug.Log("Enemy Damaged");
         }
         prb.velocity = new Vector3(0f, 0f, 0f); //stops the projectile on impact
         Destroy(gameObject); //destroys the object after impact.
-        Debug.Log("Projectile destroyed");
     }
 
 

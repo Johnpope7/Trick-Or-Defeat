@@ -215,11 +215,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1751133004, guid: a60f2ed0f274d564e9dcfb54272b10bb, type: 3}
       propertyPath: m_Size.x
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1751133004, guid: a60f2ed0f274d564e9dcfb54272b10bb, type: 3}
       propertyPath: m_Size.y
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1751133004, guid: a60f2ed0f274d564e9dcfb54272b10bb, type: 3}
       propertyPath: m_Enabled
