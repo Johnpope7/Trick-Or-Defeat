@@ -87,12 +87,39 @@ public class UIManager : MonoBehaviour
 
         //check for missing menu objects
         CheckMenuObjects();
-        Debug.Log("Game Start: " + LevelManager.instance.isGameStart);
         if (LevelManager.instance.isGameStart == true) 
         {
-            Debug.Log("Game Start: " + LevelManager.instance.isGameStart);
             levelUI.SetActive(true);
         }
+    }
+    public void OpenCharacterSelect() 
+    {
+        //if the main menu is active
+        if (mainMenu.activeSelf == true)
+        {
+            //set main menu to inactive
+            mainMenu.SetActive(false);
+        }
+
+        if (characterSelect.activeSelf == false)
+        {
+            characterSelect.SetActive(true); 
+        }
+    }
+    public void CloseCharacterSelect()
+    {
+        if (characterSelect.activeSelf == true)
+        {
+            characterSelect.SetActive(false);
+        }
+        //if the main menu is active
+        if (mainMenu.activeSelf == false)
+        {
+            //set main menu to inactive
+            mainMenu.SetActive(true);
+        }
+
+        
     }
 
     public void OpenOptionsMenu() 
@@ -191,6 +218,15 @@ public class UIManager : MonoBehaviour
     public void LoadNextScene() 
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
+    public void LoadLevel() 
+    {
+        if (characterSelect.activeSelf == true)
+        {
+            characterSelect.SetActive(false);
+        }
+        SceneManager.LoadScene(levelIndex);
     }
 
     public void Pause()

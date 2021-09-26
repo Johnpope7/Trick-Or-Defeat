@@ -14,11 +14,11 @@ public class LevelManager : MonoBehaviour
     [Header("AI Settings")]
     public GameObject target; //target of the enemies (the priest)
     public int maxEnemies; //the max number of enemies allowed in the level
-    public int currentEnemies; //the current number of enemies in the levl
+    public int currentEnemies; //the current number of enemies in the level
     public float enemySpawnDelay; //the delay between enemy spawns
     public GameObject enemySpawnPrefab; //the enemy spawner object
     public List<GameObject> enemySpawners; //a list of enemy spawners
-    public GameObject[] spawnerWaypoints; //a list of spawner spawn locations
+    public List<GameObject> spawnerWaypoints; //a list of spawner spawn locations
     public List<GameObject> enemyPrefabs; //a list of enemy prefabs
     public List<GameObject> enemies; //a list of enemies in the game
     [SerializeField]
@@ -27,11 +27,6 @@ public class LevelManager : MonoBehaviour
     private GameObject AIControllerPefab; //the ai prefab
 
     void Awake() 
-    {
-        target = GameObject.FindGameObjectWithTag("Priest");
-    }
-    // Start is called before the first frame update
-    void Start()
     {
         if (instance == null) // if instance is empty
         {
@@ -44,32 +39,33 @@ public class LevelManager : MonoBehaviour
             Destroy(this.gameObject); // delete the new level manager attempting to store itself, there can only be one.
             Debug.Log("Warning: A second game manager was detected and destrtoyed"); // display message in the console to inform of its demise
         }
-        //find the spawner waypoints to instantiate spawners on
-        spawnerWaypoints = FindSpawnLocations();
-        //spawn spawners (lol)
-        SpawnSpawners(spawnerWaypoints);
+    }
+    // Start is called before the first frame update
+    void Start()
+    {
+        target = GameObject.FindGameObjectWithTag("Priest");
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (AIController == null)
+        if (isGameStart)
         {
-            AIController = Instantiate(AIControllerPefab, new Vector3(0,0,0), Quaternion.identity);
-            AIController.name = "AI";
+            //spawn spawners (lol)
+            SpawnSpawners(spawnerWaypoints);
+            //spawn AIController if we dont have one
+            isGameStart = false;
+            if (AIController == null)
+            {
+                AIController = Instantiate(AIControllerPefab, new Vector3(0, 0, 0), Quaternion.identity);
+                AIController.name = "AI";
+            }
         }
     }
 
-    private GameObject[] FindSpawnLocations() 
+    private void SpawnSpawners(List<GameObject> locations) 
     {
-        GameObject[] spawnLocations = GameObject.FindGameObjectsWithTag("SpawnPos");
-
-        return spawnLocations;
-    }
-
-    private void SpawnSpawners(GameObject[] locations) 
-    {
-        for (int i = 0; i < locations.Length; i++)
+        for (int i = 0; i < locations.Count; i++)
         {
             GameObject spawner = Instantiate(enemySpawnPrefab, spawnerWaypoints[i].transform.position, Quaternion.identity);
             spawner.name = "ESpawner" + i;
