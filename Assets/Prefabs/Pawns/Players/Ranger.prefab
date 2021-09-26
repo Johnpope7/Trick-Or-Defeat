@@ -96,6 +96,7 @@ GameObject:
   - component: {fileID: 567513792655481922}
   - component: {fileID: 7745249173796467477}
   - component: {fileID: 8382165073319017956}
+  - component: {fileID: 128864637818721817}
   m_Layer: 6
   m_Name: Ranger
   m_TagString: Untagged
@@ -243,6 +244,25 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!95 &128864637818721817
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3021350043375090880}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6f7323b6655a4024c9b65922d4bfa8fe, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &3641789250391905074
 GameObject:
   m_ObjectHideFlags: 0
