@@ -17,6 +17,7 @@ public class ERangedPawn : Pawn
     // Start is called before the first frame update
     protected override void Start()
     {
+        StartCoroutine(EnableColliderTimer());
         base.Start();
     }
 
@@ -31,7 +32,7 @@ public class ERangedPawn : Pawn
         if (coolDown <= 0)
         {
             //get the direction the target is in and multiply it by shotForce
-            Vector2 shotDir = (transform.position - LevelManager.instance.target.transform.position) * shotForce;
+            Vector2 shotDir = Vector2.Lerp(LevelManager.instance.target.transform.position, transform.position, shotForce);
             //spawn an instance of the projectile at the firing zone
             GameObject projectileInstance = Instantiate(projectilePrefab, firingZone.position, firingZone.rotation);
             Projectile projectile = projectileInstance.GetComponent<Projectile>();
@@ -44,7 +45,8 @@ public class ERangedPawn : Pawn
             //apply the shotforce variable to the rigid body to make the bullet move
             prb.AddForce(shotDir);
             //destroy the bullet after a desired time
-            Destroy(projectileInstance, projectileLifeSpan); 
+            Destroy(projectileInstance, projectileLifeSpan);
+            coolDown = coolDownTime;
         }
     }
 }

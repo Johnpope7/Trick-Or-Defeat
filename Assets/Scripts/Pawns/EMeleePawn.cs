@@ -9,6 +9,7 @@ public class EMeleePawn : Pawn
     // Start is called before the first frame update
     protected override void Start()
     {
+        StartCoroutine(EnableColliderTimer());
         base.Start();
     }
 
@@ -30,6 +31,7 @@ public class EMeleePawn : Pawn
                 tHealth.Damage(damage);
             }
             //the above may need to be wrapped in a coroutine once animations are implemented
+            coolDown = coolDownTime;
         }
     }
 }

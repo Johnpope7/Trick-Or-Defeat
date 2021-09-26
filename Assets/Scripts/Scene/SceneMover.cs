@@ -16,7 +16,7 @@ public class SceneMover : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) || Input.GetButtonDown("Attack")) 
+        if (Input.GetKeyDown(KeyCode.Escape) || Input.GetButtonDown("Action")) 
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }

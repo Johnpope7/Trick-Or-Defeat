@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class AIController : Controller
 {
-    [Header("Controlled Enemies Array")]
-    public GameObject[] enemies;
-
     [Header("Target Settings")]
     [SerializeField]
     protected GameObject target;
@@ -33,7 +30,7 @@ public class AIController : Controller
     {
         target = LevelManager.instance.target;
         targetTf = target.transform;
-        foreach (var enemy in enemies) 
+        foreach (var enemy in LevelManager.instance.enemies) 
         {
             string type = enemy.GetComponent<Pawn>().GetTypeId();
             SetEnemyType(type);
@@ -43,7 +40,7 @@ public class AIController : Controller
     // Update is called once per frame
     protected override void Update()
     {
-        foreach (var enemy in enemies)
+        foreach (var enemy in LevelManager.instance.enemies)
         {
            Pawn pawn =  enemy.GetComponent<Pawn>();
 
@@ -82,7 +79,10 @@ public class AIController : Controller
                         break;
                     case AIState.Attack:
                         pawn.OnAction.Invoke();
-                        ChangeState(AIState.Chase);
+                        if (distanceToTarget > pawn.GetAttackRange())
+                        {
+                            ChangeState(AIState.Chase);
+                        }
                         break;
                     case AIState.Idle:
                         //do nothing
@@ -107,6 +107,7 @@ public class AIController : Controller
     {
         //change state
         aiState = newState;
+        Debug.Log("Game object: " + gameObject.name + ", is changing state to " + newState);
     }
 
     public void SetTarget(GameObject newTarget, Transform newTargetTf)

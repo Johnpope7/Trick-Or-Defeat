@@ -150,4 +150,20 @@ public class Pawn : MonoBehaviour
             anim.Play(idleAnim);
         }
     }
+
+    protected void EnableColliders() 
+    {
+        BoxCollider2D[] colliders = gameObject.GetComponents<BoxCollider2D>();
+        for (int i = 0; i < colliders.Length; i++)
+        {
+            colliders[i].enabled = true;
+            Debug.Log("Enabled Collider: {0%}", colliders[i]);
+        }
+    }
+
+    protected IEnumerator EnableColliderTimer() 
+    {
+        yield return new WaitForSeconds(0.3f);
+        EnableColliders();
+    }
 }

@@ -105,8 +105,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -359087163
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: -697763020151794088, guid: 5ea9392a3b855fc499c50feb943e2f91, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -149,7 +149,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7809700182821884589}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -175,7 +175,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7809700182821884589}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -246,8 +246,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bee62c56b9335a48811ad57a7d5622f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 800
+  speed: 100
   rb: {fileID: -3851830775934224621}
+  wr: {fileID: 0}
+  wrSpeed: 0
   coolDownTime: 0.3
   coolDown: 0
   enemyLayer:
@@ -276,7 +278,6 @@ MonoBehaviour:
         m_CallState: 2
   attackRange: 0
   typeId: Ranged
-  target: {fileID: 0}
   projectilePrefab: {fileID: 7605234991400424466, guid: 97dcd14bf9e03524ba361603e679ffe7, type: 3}
   firingZone: {fileID: 7654136780148686565}
   projectileLifeSpan: 3
