@@ -43,5 +43,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9dcb56d3fc6cf048ada7581a6d79417, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pawnName: 
-  pawnPrefab: {fileID: 0}
+  pawn: {fileID: 0}
+  pawnName: Knight
+  pawnPrefab: {fileID: 72773161504519505, guid: c81eeed904cab094fad9bc0beff4afae, type: 3}

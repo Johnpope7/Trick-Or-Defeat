@@ -85,7 +85,8 @@ public class PlayerController : Controller
 
     protected virtual void SpawnPawn() 
     {
-            pawn = Instantiate(pawnPrefab, new Vector3(0, 0, 0), Quaternion.identity) as Pawn;
-            pawn.name = pawnName;
+        pawn = Instantiate(pawnPrefab, new Vector3(0, 0, 0), Quaternion.identity) as Pawn;
+        pawn.name = pawnName;
     }
 }
+
