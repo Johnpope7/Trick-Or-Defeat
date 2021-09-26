@@ -87,6 +87,12 @@ public class UIManager : MonoBehaviour
 
         //check for missing menu objects
         CheckMenuObjects();
+        Debug.Log("Game Start: " + LevelManager.instance.isGameStart);
+        if (LevelManager.instance.isGameStart == true) 
+        {
+            Debug.Log("Game Start: " + LevelManager.instance.isGameStart);
+            levelUI.SetActive(true);
+        }
     }
 
     public void OpenOptionsMenu() 

@@ -9,6 +9,7 @@ public class LevelManager : MonoBehaviour
     public static LevelManager instance;
     public float levelTime; //level play time
     public int score; //player team score
+    public bool isGameStart; //change to false later, this is for level set up
 
     [Header("AI Settings")]
     public GameObject target; //target of the enemies (the priest)
@@ -43,8 +44,6 @@ public class LevelManager : MonoBehaviour
             Destroy(this.gameObject); // delete the new level manager attempting to store itself, there can only be one.
             Debug.Log("Warning: A second game manager was detected and destrtoyed"); // display message in the console to inform of its demise
         }
-        //set the level UI to active
-        UIManager.instance.GetLevelUi().SetActive(true);
         //find the spawner waypoints to instantiate spawners on
         spawnerWaypoints = FindSpawnLocations();
         //spawn spawners (lol)
