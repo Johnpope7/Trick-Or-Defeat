@@ -176,9 +176,9 @@ GameObject:
   - component: {fileID: 6141826384808854934}
   - component: {fileID: 6141826384808854933}
   - component: {fileID: -5950679083467137826}
-  - component: {fileID: -2150161464292853212}
   - component: {fileID: 819368652020872424}
   - component: {fileID: 7425835002229031232}
+  - component: {fileID: 8534714675907080958}
   m_Layer: 0
   m_Name: Priest
   m_TagString: Priest
@@ -273,18 +273,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &-2150161464292853212
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6141826384808854932}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f23e01502f0c774ea105f9792e2f89f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &819368652020872424
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -348,3 +336,17 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &8534714675907080958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6141826384808854932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edd42873f644686459dec09c7a20514c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pawnName: Priest
+  pawnPrefab: {fileID: 6141826384808854932}

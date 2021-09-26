@@ -123,12 +123,11 @@ GameObject:
   m_Component:
   - component: {fileID: 1621191432611958644}
   - component: {fileID: 1621191432611958647}
-  - component: {fileID: 1048460733954429545}
   - component: {fileID: -1353648608461447074}
-  - component: {fileID: -2042021169797624837}
   - component: {fileID: 1245582857}
   - component: {fileID: 26567227}
   - component: {fileID: -2698665758320235059}
+  - component: {fileID: 3812202196836396855}
   m_Layer: 6
   m_Name: Barbarian
   m_TagString: Player
@@ -202,18 +201,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1048460733954429545
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1621191432611958646}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f23e01502f0c774ea105f9792e2f89f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!50 &-1353648608461447074
 Rigidbody2D:
   serializedVersion: 4
@@ -235,29 +222,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &-2042021169797624837
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1621191432611958646}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7eb9020091402114ba741534ba6df687, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MaxHealth: 100
-  currentHealth: 100
-  onHeal:
-    m_PersistentCalls:
-      m_Calls: []
-  onDamage:
-    m_PersistentCalls:
-      m_Calls: []
-  onDeath:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &1245582857
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -349,6 +313,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &3812202196836396855
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1621191432611958646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05b4094cae412184bbb05328ac8aa5ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pawnName: Barbarian
+  pawnPrefab: {fileID: 1621191432611958646}
 --- !u!1 &4259463456349636617
 GameObject:
   m_ObjectHideFlags: 0
