@@ -247,4 +247,5 @@ MonoBehaviour:
         m_CallState: 2
   attackRange: 0.4
   typeId: Melee
+  colliderTimer: 3
   target: {fileID: 0}

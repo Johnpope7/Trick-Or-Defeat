@@ -278,6 +278,7 @@ MonoBehaviour:
         m_CallState: 2
   attackRange: 5
   typeId: Ranged
+  colliderTimer: 3
   projectilePrefab: {fileID: 7605234991400424466, guid: 97dcd14bf9e03524ba361603e679ffe7, type: 3}
   firingZone: {fileID: 7654136780148686565}
   projectileLifeSpan: 3

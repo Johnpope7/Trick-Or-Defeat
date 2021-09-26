@@ -15,6 +15,8 @@ public class UIManager : MonoBehaviour
     private GameObject optionsMenu;
     [SerializeField]
     private GameObject creditsMenu;
+    [SerializeField]
+    private GameObject levelUI;
     [Header("Menu Prefabs"), SerializeField]
     private GameObject mainMenuPrefab;
     [SerializeField]
@@ -24,14 +26,21 @@ public class UIManager : MonoBehaviour
     [SerializeField]
     private GameObject creditsPrefab;
     [SerializeField]
+    private GameObject levelUIPrefab;
+    [SerializeField]
     public static bool isPaused;
     [Header("Main menu Contents List"), SerializeField]
     private List<GameObject> mainMenuContents;
 
-    [Header("Scene Variables"), SerializeField]
+    [Header("Scene Attributes"), SerializeField]
     private int mainMenuIndex = 1;
     [SerializeField]
     private int levelIndex = 2;
+    [Header("Level Attributes")]
+    [SerializeField]
+    private Image playerHealthBar;
+    [SerializeField]
+    private Text playerHealthText;
 
     // Start is called before the first frame update
     void Start()
@@ -182,6 +191,13 @@ public class UIManager : MonoBehaviour
         Time.timeScale = 1f;
         //tell game its not paused
         isPaused = false;
+    }
+    public void RegisterPlayerHealth(Pawn player)
+    {
+        //set the fill amount
+        //playerHealthBar.fillAmount = player.pawnHealth.GetPercent();
+        //set the text to display the percentage of the player's health
+        //playerHealthText.text = string.Format("Health: {0}%", Mathf.RoundToInt(player.pawnHealth.GetPercent() * 100f));
     }
 
     public void ReturnToMain() 

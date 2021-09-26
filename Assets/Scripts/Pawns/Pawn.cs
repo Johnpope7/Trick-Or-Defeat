@@ -64,6 +64,8 @@ public class Pawn : MonoBehaviour
     protected float attackRange;
     [SerializeField]
     protected string typeId;
+    [SerializeField]
+    protected float colliderTimer = 2f;
     
 
     // Start is called before the first frame update
@@ -164,7 +166,7 @@ public class Pawn : MonoBehaviour
 
     protected IEnumerator EnableColliderTimer() 
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(colliderTimer);
         EnableColliders();
     }
 }
