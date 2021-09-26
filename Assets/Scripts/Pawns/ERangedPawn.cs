@@ -17,7 +17,6 @@ public class ERangedPawn : Pawn
     // Start is called before the first frame update
     protected override void Start()
     {
-        StartCoroutine(EnableColliderTimer());
         base.Start();
     }
 
