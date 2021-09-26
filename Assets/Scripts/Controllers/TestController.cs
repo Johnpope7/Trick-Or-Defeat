@@ -22,6 +22,8 @@ public class TestController : Controller
     private Vector2 movement;
     //the animator that is on the controllers pawn
     protected Animator anim;
+    //the direction the player is aiming
+    private Vector2 aim;
 
     // Start is called before the first frame update
     protected override void Start()
@@ -35,11 +37,16 @@ public class TestController : Controller
         
         //movement
         //set movement x and y values to appropriate axis
-        movement.x = Input.GetAxis("Horizontal");
-        movement.y = Input.GetAxis("Vertical");
+        movement.x = Input.GetAxis("MoveHorizontal");
+        movement.y = Input.GetAxis("MoveVertical");
         //pass it to the pawn's Move function
         pawn.Move(movement);
-
+        //aiming
+        //set aim x and y values to appropriate axis
+        aim.x = Input.GetAxis("AimHorizontal");
+        aim.y = Input.GetAxis("AimVertical");
+        //pass these values to the pawns aim function
+        pawn.Aim(aim);
         /*
          * CONTROLLER INPUT
          */
@@ -47,13 +54,15 @@ public class TestController : Controller
         //Action Input
         //we're using mouse 0 for now because the Action input we made in
         //the input manager wasn't recognized by name for whatever reason
-        if (Input.GetKeyDown("mouse 0")) 
+        if (Input.GetAxis("Action") > 0) 
         {
+            
             Debug.Log("Using Action!");
             //this is the action event on the pawn component
             //you can set up what you want to happen in the inspector
             //and this will just do it!
             pawn.OnAction.Invoke();
+           
         }
     }
 

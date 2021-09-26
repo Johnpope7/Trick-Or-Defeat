@@ -32,7 +32,7 @@ public class RangerPawn : Pawn
 
     #region Custom Methods
     public override void Action()
-    {
+    { 
         if (coolDown <= 0)
         {
             //create the vector 3 variable that is equal to our firing zones forward vector multiplied by shot force
@@ -49,7 +49,8 @@ public class RangerPawn : Pawn
             //apply the shotforce variable to the rigid body to make the bullet move
             prb.AddForce(shotDir);
             //destroy the bullet after a desired time
-            Destroy(projectileInstance, projectileLifeSpan); 
+            Destroy(projectileInstance, projectileLifeSpan);
+            coolDown = coolDownTime;
         }
        
     }
