@@ -165,6 +165,16 @@ public class UIManager : MonoBehaviour
             creditsMenu = Instantiate(creditsPrefab, this.gameObject.transform.position, Quaternion.identity, this.gameObject.transform);
             creditsMenu.SetActive(false);
         }
+        if (!characterSelect) 
+        {
+            characterSelect = Instantiate(characterSelectPrefab, this.gameObject.transform.position, Quaternion.identity, this.gameObject.transform);
+            characterSelect.SetActive(false);
+        }
+        if (!levelUI) 
+        {
+            levelUI = Instantiate(levelUIPrefab, this.gameObject.transform.position, Quaternion.identity, this.gameObject.transform);
+            levelUI.SetActive(false);
+        }
     }
 
     public void EnableMainMenu() 

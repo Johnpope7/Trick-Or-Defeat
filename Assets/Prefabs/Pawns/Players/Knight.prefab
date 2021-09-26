@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4564182578828236176}
   - component: {fileID: 3795137961870838475}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: WeaponRotator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,7 +92,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3556487174548323239}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: AttackPos
   m_TagString: Untagged
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
@@ -205,7 +205,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6369413453973892711}
   - component: {fileID: 165873149316952251}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Shield
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -292,7 +292,7 @@ GameObject:
   - component: {fileID: 3782536716662230201}
   - component: {fileID: 72773161504519505}
   - component: {fileID: -4145935189275456709}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Knight
   m_TagString: Untagged
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
