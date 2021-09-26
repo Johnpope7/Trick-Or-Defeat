@@ -178,6 +178,7 @@ GameObject:
   - component: {fileID: -5950679083467137826}
   - component: {fileID: 819368652020872424}
   - component: {fileID: 7425835002229031232}
+  - component: {fileID: -843612561012424231}
   m_Layer: 0
   m_Name: Priest
   m_TagString: Priest
@@ -336,3 +337,50 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &-843612561012424231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6141826384808854932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7eb9020091402114ba741534ba6df687, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxHealth: 100
+  currentHealth: 100
+  onHeal:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2817419719909609340, guid: 8ecbff7c151854d4c87bb1405e4d30a1, type: 3}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: RegisterPlayerHealth
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 819368652020872424}
+          m_ObjectArgumentAssemblyTypeName: PriestPawn, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onDamage:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2817419719909609340, guid: 8ecbff7c151854d4c87bb1405e4d30a1, type: 3}
+        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+        m_MethodName: RegisterPlayerHealth
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 819368652020872424}
+          m_ObjectArgumentAssemblyTypeName: PriestPawn, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onDeath:
+    m_PersistentCalls:
+      m_Calls: []

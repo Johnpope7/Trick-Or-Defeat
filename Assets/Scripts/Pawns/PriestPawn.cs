@@ -5,10 +5,12 @@ using UnityEngine;
 public class PriestPawn : Pawn
 {
     protected float distance = 10f;
+    private Health health;
 
     private void Awake()
     {
         LevelManager.instance.target = this.gameObject;
+        health = GetComponent<Health>();
     }
     // Start is called before the first frame update
     protected override void Start()
@@ -33,5 +35,10 @@ public class PriestPawn : Pawn
         //    transform.position = new Vector2(transform.position.x - distance, transform.position.y);
         //    transform.position = new Vector2(transform.position.x, transform.position.y - distance);
         }
+    }
+
+    public Health GetHealth() 
+    {
+        return health;
     }
 }

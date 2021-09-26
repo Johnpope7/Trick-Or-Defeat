@@ -17,6 +17,8 @@ public class UIManager : MonoBehaviour
     private GameObject creditsMenu;
     [SerializeField]
     private GameObject levelUI;
+    [SerializeField]
+    private GameObject characterSelect;
     [Header("Menu Prefabs"), SerializeField]
     private GameObject mainMenuPrefab;
     [SerializeField]
@@ -27,6 +29,8 @@ public class UIManager : MonoBehaviour
     private GameObject creditsPrefab;
     [SerializeField]
     private GameObject levelUIPrefab;
+    [SerializeField]
+    private GameObject characterSelectPrefab;
     [SerializeField]
     public static bool isPaused;
     [Header("Main menu Contents List"), SerializeField]
@@ -192,12 +196,13 @@ public class UIManager : MonoBehaviour
         //tell game its not paused
         isPaused = false;
     }
-    public void RegisterPlayerHealth(Pawn player)
+    public void RegisterPlayerHealth(PriestPawn priest)
     {
+        float healthPercent = priest.GetHealth().GetPercent();
         //set the fill amount
-        //playerHealthBar.fillAmount = player.pawnHealth.GetPercent();
+        playerHealthBar.fillAmount = healthPercent;
         //set the text to display the percentage of the player's health
-        //playerHealthText.text = string.Format("Health: {0}%", Mathf.RoundToInt(player.pawnHealth.GetPercent() * 100f));
+        playerHealthText.text = string.Format("Health: {0}%", Mathf.RoundToInt(healthPercent * 100f));
     }
 
     public void ReturnToMain() 
