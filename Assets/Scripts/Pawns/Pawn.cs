@@ -29,7 +29,10 @@ public class Pawn : MonoBehaviour
     protected float speed;
     [SerializeField, Tooltip("The Rigidbody 2D on this pawn")]
     protected Rigidbody2D rb;
-    
+    [SerializeField, Tooltip("The Weapon Rotator transform on this pawn")]
+    protected Transform wr;
+    [SerializeField, Tooltip("The speed at which the weapon rotates around this pawn")]
+    protected float wrSpeed;
 
     [Header("Pawn Attack Settings")]
     [SerializeField, Range(0, 1), Tooltip("the amount of time it takes an action to refresh")]
@@ -41,7 +44,7 @@ public class Pawn : MonoBehaviour
     [SerializeField, Range(0, 100), Tooltip("the amount of damage a pawn's attack does")]
     protected float damage;
 
-    [Header("Aniamtion Settings"), SerializeField]
+    [Header("Animation Settings"), SerializeField]
     protected Animator anim;
     [SerializeField, Tooltip("The Sprite Renderer attached to this game object")]
     protected SpriteRenderer sr;
@@ -85,6 +88,12 @@ public class Pawn : MonoBehaviour
     {
         //move the rigidbody by Vector 2 multiplied by speed.
         rb.velocity = new Vector2(movement.x * speed * Time.fixedDeltaTime, movement.y * speed * Time.fixedDeltaTime);
+    }
+
+    public void Aim(Vector2 aim) 
+    {
+        float aimDirection = Mathf.Atan2(aim.x, aim.y);
+        wr.transform.rotation = Quaternion.Euler(0f, 0f, aimDirection * Mathf.Rad2Deg -90);
     }
 
     /// <summary>
