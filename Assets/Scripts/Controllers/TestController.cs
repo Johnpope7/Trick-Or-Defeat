@@ -20,6 +20,8 @@ public class TestController : Controller
     protected Pawn pawn;
     //the movement direction of the player
     private Vector2 movement;
+    //the animator that is on the controllers pawn
+    protected Animator anim;
 
     // Start is called before the first frame update
     protected override void Start()
@@ -30,6 +32,7 @@ public class TestController : Controller
     // Update is called once per frame
     protected override void Update()
     {
+        
         //movement
         //set movement x and y values to appropriate axis
         movement.x = Input.GetAxis("Horizontal");
