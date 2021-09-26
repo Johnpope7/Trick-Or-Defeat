@@ -17,6 +17,8 @@ public class UIManager : MonoBehaviour
     private GameObject creditsMenu;
     [SerializeField]
     private GameObject levelUI;
+    [SerializeField]
+    private GameObject characterSelect;
     [Header("Menu Prefabs"), SerializeField]
     private GameObject mainMenuPrefab;
     [SerializeField]
@@ -27,6 +29,8 @@ public class UIManager : MonoBehaviour
     private GameObject creditsPrefab;
     [SerializeField]
     private GameObject levelUIPrefab;
+    [SerializeField]
+    private GameObject characterSelectPrefab;
     [SerializeField]
     public static bool isPaused;
     [Header("Main menu Contents List"), SerializeField]
