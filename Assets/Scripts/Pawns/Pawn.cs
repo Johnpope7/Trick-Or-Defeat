@@ -39,7 +39,10 @@ public class Pawn : MonoBehaviour
     protected LayerMask enemyLayer; 
     [SerializeField, Range(0, 100), Tooltip("the amount of damage a pawn's attack does")]
     protected float damage;
-    
+
+    [Header("Aniamtion Settings"), SerializeField]
+    protected Animator anim;
+
     [Header("Pawn Events")]
     [Tooltip("Calls the class's special action. Usually used on controllers to allow the player to attack.")]
     public UnityEvent OnAction;
