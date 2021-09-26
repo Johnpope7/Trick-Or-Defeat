@@ -35,10 +35,10 @@ public class KnightPawn : Pawn
             //for every collider in that array
             for (int i = 0; i < enemiesToPush.Length; i++)
             {
-                Vector2 difference = enemiesToPush[i].transform.position - transform.position;
+                Vector2 difference = enemiesToPush[i].transform.position + transform.position;
                 //draw a circle and put all the colliders within it in an array
-                enemiesToPush[i].GetComponent<Rigidbody2D>().velocity = new Vector2(enemiesToPush[i].transform.position.x + difference.x,
-                                                                                    enemiesToPush[i].transform.position.y + difference.y);
+                enemiesToPush[i].GetComponent<Rigidbody2D>().velocity = new Vector2(enemiesToPush[i].transform.position.x * difference.x,
+                                                                                    enemiesToPush[i].transform.position.y * difference.y);
                 Debug.Log("Pushed Enemy: " + enemiesToPush[i].name);
             }
             coolDown = coolDownTime;
