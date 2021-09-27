@@ -85,7 +85,7 @@ public class PlayerController : Controller
 
     protected virtual void SpawnPawn() 
     {
-        GameObject _pawn = Instantiate(pawnPrefab, new Vector3(0, 0, 0), Quaternion.identity);
+        GameObject _pawn = Instantiate(pawnPrefab, transform.position, transform.rotation);
         pawn = _pawn.GetComponent<Pawn>();
         _pawn.name = pawnName;
     }

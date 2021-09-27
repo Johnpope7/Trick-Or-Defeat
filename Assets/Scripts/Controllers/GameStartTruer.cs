@@ -9,10 +9,4 @@ public class GameStartTruer : MonoBehaviour
     {
         LevelManager.instance.isGameStart = true;
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

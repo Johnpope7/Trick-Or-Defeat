@@ -4221,7 +4221,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9107cfd9106fa6c47ae1a235108178b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioMixer: {fileID: 0}
+  audioMixer: {fileID: 24100000, guid: b2ebc190f0e8bf24bb485b6b5db24002, type: 2}
   resolutionDropDown: {fileID: 7008460312421489444}
   qualityDropDown: {fileID: 7008460312778151784}
   masterSlider: {fileID: 7008460313338289546}

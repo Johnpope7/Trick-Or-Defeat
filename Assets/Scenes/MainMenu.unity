@@ -253,17 +253,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1895996916, guid: 8ecbff7c151854d4c87bb1405e4d30a1, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: LoadNextScene
-      objectReference: {fileID: 0}
-    - target: {fileID: 2791598569494224379, guid: 8ecbff7c151854d4c87bb1405e4d30a1, type: 3}
-      propertyPath: applyButton
-      value: 
-      objectReference: {fileID: 1618643704}
-    - target: {fileID: 3453814960665991935, guid: 8ecbff7c151854d4c87bb1405e4d30a1, type: 3}
+    - target: {fileID: 4319090966183599720, guid: 8ecbff7c151854d4c87bb1405e4d30a1, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5197194096318498884, guid: 8ecbff7c151854d4c87bb1405e4d30a1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5197194096936487814, guid: 8ecbff7c151854d4c87bb1405e4d30a1, type: 3}
       propertyPath: m_Pivot.x
@@ -355,17 +351,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ecbff7c151854d4c87bb1405e4d30a1, type: 3}
---- !u!114 &1618643704 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3081304568773272583, guid: 8ecbff7c151854d4c87bb1405e4d30a1, type: 3}
-  m_PrefabInstance: {fileID: 1618643703}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1826980754
 GameObject:
   m_ObjectHideFlags: 0

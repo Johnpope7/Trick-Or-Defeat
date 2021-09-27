@@ -92,6 +92,21 @@ public class UIManager : MonoBehaviour
             levelUI.SetActive(true);
         }
     }
+
+    public void CloseAllMenus() 
+    {
+        if (characterSelect.activeSelf == true)
+        {
+            characterSelect.SetActive(false);
+        }
+
+        if (mainMenu.activeSelf == true)
+        {
+            //set main menu to inactive
+            mainMenu.SetActive(false);
+        }
+    }
+
     public void OpenCharacterSelect() 
     {
         //if the main menu is active
@@ -118,8 +133,20 @@ public class UIManager : MonoBehaviour
             //set main menu to inactive
             mainMenu.SetActive(true);
         }
-
-        
+        if (optionsMenu.activeSelf == true) 
+        {
+            //set the options menu to inactive
+            optionsMenu.SetActive(false);
+        }
+        if (creditsMenu.activeSelf == true) 
+        {
+            //set the credits menu to inactive
+            creditsMenu.SetActive(false);
+        }
+        if (pauseMenu.activeSelf == true) 
+        {
+            pauseMenu.SetActive(false);
+        }
     }
 
     public void OpenOptionsMenu() 
