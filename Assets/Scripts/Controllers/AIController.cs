@@ -9,8 +9,6 @@ public class AIController : Controller
     protected GameObject target;
     [SerializeField]
     protected Transform targetTf; //the transform of the target player
-    [SerializeField]
-    protected float distanceToTarget; //distance from a specific pawn to a target player
     protected Vector2 movement; //the movement direction of the pawn
     [SerializeField]
     protected LayerMask playerLayer; //the layer mask the players are on
@@ -57,14 +55,14 @@ public class AIController : Controller
                     case Pawn.AIState.Chase:
                         movement = (targetTf.position - pawn.transform.position) * pawn.GetSpeed() * Time.deltaTime;
                         pawn.Move(movement);
-                        if (distanceToTarget <= pawn.GetAttackRange())
+                        if (Vector3.Distance(target.transform.position, pawn.transform.position) <= pawn.GetAttackRange())
                         {
                             ChangeState(Pawn.AIState.Attack, pawn);
                         }
                         break;
                     case Pawn.AIState.Attack:
                         pawn.OnAction.Invoke();
-                        if (distanceToTarget > pawn.GetAttackRange())
+                        if (Vector3.Distance(target.transform.position, pawn.transform.position) > pawn.GetAttackRange())
                         {
                             ChangeState(Pawn.AIState.Chase, pawn); 
                         }
@@ -81,14 +79,14 @@ public class AIController : Controller
                     case Pawn.AIState.Chase:
                         movement = (targetTf.position - pawn.transform.position) * pawn.GetSpeed() * Time.deltaTime;
                         pawn.Move(movement);
-                        if (distanceToTarget <= pawn.GetAttackRange())
+                        if (Vector3.Distance(target.transform.position, pawn.transform.position) <= pawn.GetAttackRange())
                         {
                             ChangeState(Pawn.AIState.Attack, pawn);
                         }
                         break;
                     case Pawn.AIState.Attack:
                         pawn.OnAction.Invoke();
-                        if (distanceToTarget > pawn.GetAttackRange())
+                        if (Vector3.Distance(target.transform.position, pawn.transform.position) > pawn.GetAttackRange())
                         {
                             ChangeState(Pawn.AIState.Chase, pawn);
                         }
@@ -107,7 +105,7 @@ public class AIController : Controller
         {
             enemyType = EnemyType.Melee;
         }
-        else 
+        else if (type == "Ranged")
         {
             enemyType = EnemyType.Ranged;
         }
