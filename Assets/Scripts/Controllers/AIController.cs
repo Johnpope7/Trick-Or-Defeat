@@ -9,20 +9,18 @@ public class AIController : Controller
     protected GameObject target;
     [SerializeField]
     protected Transform targetTf; //the transform of the target player
+    [SerializeField]
     protected float distanceToTarget; //distance from a specific pawn to a target player
     protected Vector2 movement; //the movement direction of the pawn
     [SerializeField]
     protected LayerMask playerLayer; //the layer mask the players are on
 
-    [Header("AI State")]
-    [SerializeField]
-    protected AIState aiState = AIState.Chase; //states for the AI, initial state is chase
-    [SerializeField]
+    [Header("Enemy Type"), SerializeField]
     protected EnemyType enemyType; //the type of enemy the AI controller is interfacing with (Melee or Ranged)
+    protected enum EnemyType { Melee, Ranged } //an enumeration of enemy types
     [SerializeField, Range(0, 10)]
     protected float timer = 3f; //timer for the melee state change coroutine
-    protected enum AIState { Chase, Attack, Idle } //an enumeration of AI States
-    protected enum EnemyType { Melee, Ranged } //an enumeration of enemy types
+    
 
 
     // Start is called before the first frame update
@@ -54,45 +52,48 @@ public class AIController : Controller
 
             if (enemyType == EnemyType.Melee)
             {
-                switch (aiState)
+                switch (pawn.aiState)
                 {
-                    case AIState.Chase:
+                    case Pawn.AIState.Chase:
                         movement = (targetTf.position - pawn.transform.position) * pawn.GetSpeed() * Time.deltaTime;
                         pawn.Move(movement);
                         if (distanceToTarget <= pawn.GetAttackRange())
                         {
-                            ChangeState(AIState.Attack);
+                            ChangeState(Pawn.AIState.Attack, pawn);
                         }
                         break;
-                    case AIState.Attack:
+                    case Pawn.AIState.Attack:
                         pawn.OnAction.Invoke();
                         if (distanceToTarget > pawn.GetAttackRange())
                         {
-                            ChangeState(AIState.Chase); 
+                            ChangeState(Pawn.AIState.Chase, pawn); 
                         }
                         break;
-                    case AIState.Idle:
+                    case Pawn.AIState.Idle:
                         //do nothing
                         break;
                 }
             }
             else if (enemyType == EnemyType.Ranged)
             {
-                switch (aiState)
+                switch (pawn.aiState)
                 {
-                    case AIState.Chase:
+                    case Pawn.AIState.Chase:
                         movement = (targetTf.position - pawn.transform.position) * pawn.GetSpeed() * Time.deltaTime;
                         pawn.Move(movement);
-                        StartCoroutine(StateChangeTimer());
+                        if (distanceToTarget <= pawn.GetAttackRange())
+                        {
+                            ChangeState(Pawn.AIState.Attack, pawn);
+                        }
                         break;
-                    case AIState.Attack:
+                    case Pawn.AIState.Attack:
                         pawn.OnAction.Invoke();
                         if (distanceToTarget > pawn.GetAttackRange())
                         {
-                            ChangeState(AIState.Chase);
+                            ChangeState(Pawn.AIState.Chase, pawn);
                         }
                         break;
-                    case AIState.Idle:
+                    case Pawn.AIState.Idle:
                         //do nothing
                         break;
                 }
@@ -111,10 +112,10 @@ public class AIController : Controller
             enemyType = EnemyType.Ranged;
         }
     }
-    protected void ChangeState(AIState newState)
+    protected void ChangeState(Pawn.AIState newState, Pawn pawn)
     {
         //change state
-        aiState = newState;
+        pawn.aiState = newState;
         Debug.Log("Game object: " + gameObject.name + ", is changing state to " + newState);
     }
 
@@ -124,9 +125,9 @@ public class AIController : Controller
         targetTf = newTargetTf;
     }
 
-    IEnumerator StateChangeTimer() 
+    IEnumerator StateChangeTimer(Pawn.AIState aiState, Pawn pawn) 
     {
         yield return new WaitForSeconds(timer);
-        ChangeState(AIState.Attack);
+        ChangeState(aiState, pawn);
     }
 }

@@ -66,7 +66,9 @@ public class Pawn : MonoBehaviour
     protected string typeId;
     [SerializeField]
     protected float colliderTimer = 2f;
-    
+    public enum AIState { Chase, Attack, Idle } //an enumeration of AI States
+    public AIState aiState = AIState.Chase; //states for the AI, initial state is chase
+
 
     // Start is called before the first frame update
     protected virtual void Start()
