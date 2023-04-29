@@ -110,7 +110,19 @@ MonoBehaviour:
       m_Calls: []
   onDeath:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1555405673872753025}
+        m_TargetAssemblyTypeName: Health, Assembly-CSharp
+        m_MethodName: Die
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!61 &1555405673872753027
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -248,4 +260,5 @@ MonoBehaviour:
   attackRange: 0.4
   typeId: Melee
   colliderTimer: 3
+  aiState: 0
   target: {fileID: 0}

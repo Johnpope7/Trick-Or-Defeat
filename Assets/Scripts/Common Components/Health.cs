@@ -146,4 +146,9 @@ public class Health : MonoBehaviour
         //Object Pull or destroy
         Destroy(gameObject);
     }
+
+    public void PlayerDeath() //This is for player death, pause the game, deactive all objects
+    {
+        Time.timeScale = 0f;
+    }
 }

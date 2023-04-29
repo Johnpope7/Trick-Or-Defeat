@@ -318,6 +318,7 @@ MonoBehaviour:
   attackRange: 0
   typeId: 
   colliderTimer: 2
+  aiState: 0
 --- !u!95 &7425835002229031232
 Animator:
   serializedVersion: 3
@@ -383,4 +384,16 @@ MonoBehaviour:
         m_CallState: 2
   onDeath:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: -843612561012424231}
+        m_TargetAssemblyTypeName: Health, Assembly-CSharp
+        m_MethodName: PlayerDeath
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
