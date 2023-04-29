@@ -67,6 +67,7 @@ public class AIController : Controller
                         }
                         break;
                     case Pawn.AIState.Attack:
+                        movement = (targetTf.position - pawn.transform.position) * 0; pawn.Move(movement);
                         pawn.OnAction.Invoke();
                         Debug.Log("Melee Attacking");
                         if (Vector3.Distance(target.transform.position, pawn.transform.position) > pawn.GetAttackRange())
@@ -96,6 +97,7 @@ public class AIController : Controller
                         }
                         break;
                     case Pawn.AIState.Attack:
+                        movement = (targetTf.position - pawn.transform.position) * 0; pawn.Move(movement);
                         pawn.OnAction.Invoke();
                         Debug.Log("Range Attacking");
                         if (Vector3.Distance(target.transform.position, pawn.transform.position) > pawn.GetAttackRange())
