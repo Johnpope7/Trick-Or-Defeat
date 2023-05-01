@@ -236,7 +236,7 @@ MonoBehaviour:
   coolDown: 0
   enemyLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   damage: 15
   anim: {fileID: 4201242376540316882}
   sr: {fileID: 6892853012905731413}
@@ -258,7 +258,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  attackRange: 0
+  attackRange: 4
   typeId: Ranged
   colliderTimer: 3
   aiState: 0

@@ -38,46 +38,37 @@ public class AIController : Controller
     {
         if (target == null) 
         {
-            Debug.Log("Assigning Targets");
             target = LevelManager.instance.target;
         }
         if (targetTf == null) 
         {
-            Debug.Log("Assigning Target Transform");
             targetTf = target.transform;
         }
         foreach (var enemy in LevelManager.instance.enemies)
         {
-            Debug.Log("Assigning Enemy component");
             Pawn pawn =  enemy.GetComponent<Pawn>();
 
             if (enemyType == EnemyType.Melee)
             {
-                Debug.Log("Enemy Type, Melee");
                 switch (pawn.aiState)
                 {
                     case Pawn.AIState.Chase:
-                        Debug.Log("Melee Chasing");
                         movement = (targetTf.position - pawn.transform.position) * pawn.GetSpeed() * Time.deltaTime;
                         pawn.Move(movement);
                         if (Vector3.Distance(target.transform.position, pawn.transform.position) <= pawn.GetAttackRange())
                         {
-                            Debug.Log("Melee Changing to Attack");
                             ChangeState(Pawn.AIState.Attack, pawn);
                         }
                         break;
                     case Pawn.AIState.Attack:
                         movement = (targetTf.position - pawn.transform.position) * 0; pawn.Move(movement);
                         pawn.OnAction.Invoke();
-                        Debug.Log("Melee Attacking");
                         if (Vector3.Distance(target.transform.position, pawn.transform.position) > pawn.GetAttackRange())
                         {
-                            Debug.Log("Melee Changing to Chase");
                             ChangeState(Pawn.AIState.Chase, pawn); 
                         }
                         break;
                     case Pawn.AIState.Idle:
-                        Debug.Log("Melee Idle");
                         //do nothing
                         break;
                 }
@@ -87,27 +78,22 @@ public class AIController : Controller
                 switch (pawn.aiState)
                 {
                     case Pawn.AIState.Chase:
-                        Debug.Log("Range Chasing");
                         movement = (targetTf.position - pawn.transform.position) * pawn.GetSpeed() * Time.deltaTime;
                         pawn.Move(movement);
                         if (Vector3.Distance(target.transform.position, pawn.transform.position) <= pawn.GetAttackRange())
                         {
-                            Debug.Log("Range changing to Attack");
                             ChangeState(Pawn.AIState.Attack, pawn);
                         }
                         break;
                     case Pawn.AIState.Attack:
                         movement = (targetTf.position - pawn.transform.position) * 0; pawn.Move(movement);
                         pawn.OnAction.Invoke();
-                        Debug.Log("Range Attacking");
                         if (Vector3.Distance(target.transform.position, pawn.transform.position) > pawn.GetAttackRange())
                         {
-                            Debug.Log("Range changing to Chase");
                             ChangeState(Pawn.AIState.Chase, pawn);
                         }
                         break;
                     case Pawn.AIState.Idle:
-                        Debug.Log("Range Idling");
                         //do nothing
                         break;
                 }
@@ -130,7 +116,6 @@ public class AIController : Controller
     {
         //change state
         pawn.aiState = newState;
-        Debug.Log("Game object: " + gameObject.name + ", is changing state to " + newState);
     }
 
     public void SetTarget(GameObject newTarget, Transform newTargetTf)

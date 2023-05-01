@@ -257,7 +257,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  attackRange: 0.4
+  attackRange: 0.75
   typeId: Melee
   colliderTimer: 3
   aiState: 0
