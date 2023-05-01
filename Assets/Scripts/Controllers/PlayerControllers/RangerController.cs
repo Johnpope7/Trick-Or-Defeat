@@ -15,14 +15,14 @@ public class RangerController : PlayerController
     {
         //movement
         //set movement x and y values to appropriate axis
-        movement.x = Input.GetAxis("Move4Horizontal");
-        movement.y = Input.GetAxis("Move4Vertical");
+        movement.x = Input.GetAxis("Move3Horizontal");
+        movement.y = Input.GetAxis("Move3Vertical");
         //pass it to the pawn's Move function
         pawn.Move(movement);
         //aiming
         //set aim x and y values to appropriate axis
-        aim.x = Input.GetAxis("Aim4Horizontal");
-        aim.y = Input.GetAxis("Aim4Vertical");
+        aim.x = Input.GetAxis("Aim3Horizontal");
+        aim.y = Input.GetAxis("Aim3Vertical");
         //pass these values to the pawns aim function
         pawn.Aim(aim);
         /*
